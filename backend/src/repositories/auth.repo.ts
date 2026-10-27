@@ -21,11 +21,14 @@ export const authRepo={
     expiredAt:Date
   }&SessionMeta){
     return prisma.refreshSession.create({data})
-  }
+  },
   findSessionByTokenHash(tokenHash:string){
     return prisma.refreshSession.findUnique({
       where:{tokenHash},
       include:{user:true}
-    })
+    });
+  },
+  deleteSession(id:string){
+    return prisma.refreshSession.deleteMany({where:{id}})
   }
 }
