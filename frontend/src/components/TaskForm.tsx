@@ -80,7 +80,7 @@ export function TaskForm({ initial, submitLabel, onSubmit, onCancel }: TaskFormP
         <button
           type="button"
           onClick={() => setShowDetails(true)}
-          className="text-xs text-muted transition hover:text-accent"
+          className="text-xs text-muted transition hover:text-teal"
         >
           + Add details, priority or a due date
         </button>

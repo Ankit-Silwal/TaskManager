@@ -153,7 +153,7 @@ export default function TasksPage() {
                 aria-pressed={filter === f}
                 className={`rounded-full px-3 py-1 text-sm transition ${
                   filter === f
-                    ? "bg-accent-soft font-medium text-accent"
+                    ? "bg-teal-soft font-medium text-teal"
                     : "text-muted hover:text-ink"
                 }`}
               >

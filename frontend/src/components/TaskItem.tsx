@@ -20,7 +20,7 @@ interface TaskItemProps {
 
 const priorityStyles: Record<TaskPriority, string> = {
   LOW: "text-muted",
-  MEDIUM: "bg-honey-soft text-honey",
+  MEDIUM: "bg-teal-soft text-teal",
   HIGH: "bg-accent-soft text-accent",
 };
 
@@ -58,7 +58,7 @@ export function TaskItem({ task, onUpdate, onDelete }: TaskItemProps) {
 
   if (editing) {
     return (
-      <li className="rounded-2xl bg-surface p-4 ring-1 ring-accent/40">
+      <li className="rounded-2xl bg-surface p-4 ring-1 ring-teal/50">
         <TaskForm
           initial={task}
           submitLabel="Save"
@@ -76,7 +76,7 @@ export function TaskItem({ task, onUpdate, onDelete }: TaskItemProps) {
   const overdue = isOverdue(task);
 
   return (
-    <li className="group rounded-2xl bg-surface px-4 py-3.5 ring-1 ring-line transition hover:ring-accent/30">
+    <li className="group rounded-2xl bg-surface px-4 py-3.5 ring-1 ring-line transition hover:ring-teal/40">
       <div className="flex items-start gap-3">
         <input
           type="checkbox"
