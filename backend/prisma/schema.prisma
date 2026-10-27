@@ -21,6 +21,7 @@ model User {
   createdAt    DateTime         @default(now())
   updatedAt    DateTime         @updatedAt
   sessions     RefreshSession[]
+  tasks        Task[]
 
   @@map("users")
 }
@@ -40,4 +41,33 @@ model RefreshSession {
   @@index([userId])
   @@index([expiredAt])
   @@map("refresh_sessions")
+}
+enum TaskStatus{
+  TODO
+  IN_PROGRESS
+  DONE
+}
+
+enum TaskPriority{
+  LOW
+  MEDIUM
+  HIGH
+}
+model Task{
+  id     String @id @default(uuid()) @db.Uuid
+  userId String @db.Uuid
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  title String
+  description String?
+  status TaskStatus @default(TODO)
+  priority TaskPriority @default(MEDIUM)
+  dueDate DateTime?
+  completedAt DateTime?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  
+  @@index([userId])
+  @@index([userId,status])
+  @@index([userId,dueDate])
+  @@map("tasks")
 }
