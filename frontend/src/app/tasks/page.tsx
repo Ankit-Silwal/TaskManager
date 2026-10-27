@@ -7,10 +7,18 @@ import { ApiError, createTask, deleteTask, listTasks, updateTask } from "@/lib/a
 import { STATUS_LABELS, type Task, type TaskInput, type TaskStatus } from "@/lib/types";
 import { TaskForm } from "@/components/TaskForm";
 import { TaskItem } from "@/components/TaskItem";
+import { errorBox, ghostButton } from "@/components/ui";
 
 type Filter = "ALL" | TaskStatus;
 
 const FILTERS: Filter[] = ["ALL", "TODO", "IN_PROGRESS", "DONE"];
+
+function greeting() {
+  const hour = new Date().getHours();
+  if (hour < 12) return "Good morning";
+  if (hour < 18) return "Good afternoon";
+  return "Good evening";
+}
 
 export default function TasksPage() {
   const { user, loading, logout } = useAuth();
@@ -91,9 +99,7 @@ export default function TasksPage() {
 
   if (loading || !user) {
     return (
-      <main className="flex flex-1 items-center justify-center text-sm text-slate-500">
-        Loading…
-      </main>
+      <main className="flex flex-1 items-center justify-center text-sm text-muted">Loading…</main>
     );
   }
 
@@ -103,65 +109,75 @@ export default function TasksPage() {
     IN_PROGRESS: tasks.filter((t) => t.status === "IN_PROGRESS").length,
     DONE: tasks.filter((t) => t.status === "DONE").length,
   };
+  const remaining = counts.ALL - counts.DONE;
   const visible = filter === "ALL" ? tasks : tasks.filter((t) => t.status === filter);
+  const firstName = user.name.split(" ")[0];
 
   return (
     <div className="flex flex-1 flex-col">
-      <header className="border-b border-slate-200 bg-white/80 backdrop-blur dark:border-slate-800 dark:bg-slate-950/60">
-        <div className="mx-auto flex max-w-3xl items-center justify-between px-4 py-3">
-          <span className="font-semibold tracking-tight">Task Manager</span>
-          <div className="flex items-center gap-3 text-sm">
-            <span className="hidden text-slate-500 sm:inline">{user.name}</span>
-            <button
-              type="button"
-              onClick={handleLogout}
-              className="rounded-lg px-3 py-1.5 font-medium text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800"
-            >
-              Log out
-            </button>
-          </div>
+      <header className="mx-auto flex w-full max-w-2xl items-center justify-between px-4 pt-6">
+        <div className="flex items-center gap-2 text-sm font-medium text-muted">
+          <span className="h-2.5 w-2.5 rounded-full bg-accent" aria-hidden />
+          Task Manager
         </div>
+        <button type="button" onClick={handleLogout} className={ghostButton}>
+          Log out
+        </button>
       </header>
 
-      <main className="mx-auto w-full max-w-3xl flex-1 space-y-6 px-4 py-8">
-        <section className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900/60">
-          <h2 className="mb-3 text-sm font-semibold">New task</h2>
-          <TaskForm submitLabel="Add task" onSubmit={handleCreate} />
+      <main className="mx-auto w-full max-w-2xl flex-1 px-4 pb-16 pt-12">
+        <h1 className="font-serif text-3xl text-ink sm:text-4xl">
+          {greeting()}, {firstName}.
+        </h1>
+        <p className="mt-2 text-muted">
+          {fetching
+            ? "Gathering your tasks…"
+            : remaining === 0
+              ? counts.ALL === 0
+                ? "Nothing on your plate yet."
+                : "Everything's done. Enjoy the quiet."
+              : `You have ${remaining} ${remaining === 1 ? "thing" : "things"} left to do.`}
+        </p>
+
+        <section className="mt-10">
+          <TaskForm submitLabel="Add" onSubmit={handleCreate} />
         </section>
 
-        <section className="space-y-4">
-          <div className="flex flex-wrap gap-2">
+        <section className="mt-10 space-y-4">
+          <nav className="flex flex-wrap gap-1" aria-label="Filter tasks">
             {FILTERS.map((f) => (
               <button
                 key={f}
                 type="button"
                 onClick={() => setFilter(f)}
-                className={`rounded-full px-3 py-1 text-sm font-medium transition ${
+                aria-pressed={filter === f}
+                className={`rounded-full px-3 py-1 text-sm transition ${
                   filter === f
-                    ? "bg-indigo-600 text-white"
-                    : "bg-white text-slate-600 ring-1 ring-slate-200 hover:bg-slate-50 dark:bg-slate-900 dark:text-slate-300 dark:ring-slate-800 dark:hover:bg-slate-800"
+                    ? "bg-accent-soft font-medium text-accent"
+                    : "text-muted hover:text-ink"
                 }`}
               >
                 {f === "ALL" ? "All" : STATUS_LABELS[f]}
-                <span className="ml-1.5 opacity-70">{counts[f]}</span>
+                <span className="ml-1.5 opacity-60">{counts[f]}</span>
               </button>
             ))}
-          </div>
+          </nav>
 
-          {error && (
-            <p className="rounded-lg bg-red-50 px-3 py-2 text-sm text-red-700 dark:bg-red-950/50 dark:text-red-300">
-              {error}
-            </p>
-          )}
+          {error && <p className={errorBox}>{error}</p>}
 
-          {fetching ? (
-            <p className="py-10 text-center text-sm text-slate-500">Loading tasks…</p>
-          ) : visible.length === 0 ? (
-            <p className="rounded-xl border border-dashed border-slate-300 py-10 text-center text-sm text-slate-500 dark:border-slate-700">
-              {filter === "ALL" ? "No tasks yet. Add your first one above." : "No tasks with this status."}
-            </p>
+          {fetching ? null : visible.length === 0 ? (
+            <div className="rounded-2xl border border-dashed border-line px-6 py-12 text-center">
+              <p className="font-serif text-lg text-ink">
+                {filter === "ALL" ? "A fresh start." : "Nothing here."}
+              </p>
+              <p className="mt-1 text-sm text-muted">
+                {filter === "ALL"
+                  ? "Add your first task above."
+                  : `No tasks are marked ${STATUS_LABELS[filter as TaskStatus].toLowerCase()}.`}
+              </p>
+            </div>
           ) : (
-            <ul className="space-y-3">
+            <ul className="space-y-2">
               {visible.map((task) => (
                 <TaskItem key={task.id} task={task} onUpdate={handleUpdate} onDelete={handleDelete} />
               ))}

@@ -14,8 +14,6 @@ export default function Home() {
   }, [user, loading, router]);
 
   return (
-    <main className="flex flex-1 items-center justify-center text-sm text-slate-500">
-      Loading…
-    </main>
+    <main className="flex flex-1 items-center justify-center text-sm text-muted">Loading…</main>
   );
 }

@@ -1,26 +1,66 @@
 @import "tailwindcss";
 
+/* Warm palette: cream paper, cocoa ink, terracotta accent. */
 :root {
-  --background: #f8fafc;
-  --foreground: #0f172a;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --bg: #faf5ee;
+  --surface: #fffcf7;
+  --ink: #3b2e26;
+  --muted: #8c7a6b;
+  --line: #ece2d4;
+  --accent: #c2643c;
+  --accent-hover: #a95530;
+  --accent-soft: #f7e7dc;
+  --honey: #9a6b16;
+  --honey-soft: #f6ead0;
+  --danger: #b2432f;
+  --danger-soft: #f8e4de;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0b0f19;
-    --foreground: #e2e8f0;
+    --bg: #1c1612;
+    --surface: #251e19;
+    --ink: #f2e8dd;
+    --muted: #a8968a;
+    --line: #382d26;
+    --accent: #e3895f;
+    --accent-hover: #eda07c;
+    --accent-soft: #3b2920;
+    --honey: #e2b860;
+    --honey-soft: #3a2f1a;
+    --danger: #e98068;
+    --danger-soft: #3d221c;
   }
 }
 
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-soft: var(--accent-soft);
+  --color-honey: var(--honey);
+  --color-honey-soft: var(--honey-soft);
+  --color-danger: var(--danger);
+  --color-danger-soft: var(--danger-soft);
+  --font-sans: var(--font-body);
+  --font-serif: var(--font-display);
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-sans), system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body), system-ui, sans-serif;
+}
+
+::selection {
+  background: var(--accent-soft);
+  color: var(--ink);
+}
+
+input[type="checkbox"] {
+  accent-color: var(--accent);
 }

@@ -63,11 +63,17 @@ async function request<T>(path: string, init: RequestInit = {}, retry = true): P
   if (init.body !== undefined) headers.set("Content-Type", "application/json");
   if (accessToken) headers.set("Authorization", `Bearer ${accessToken}`);
 
-  const res = await fetch(`${API_URL}${path}`, {
-    ...init,
-    headers,
-    credentials: "include",
-  });
+  let res: Response;
+  try {
+    res = await fetch(`${API_URL}${path}`, {
+      ...init,
+      headers,
+      credentials: "include",
+    });
+  } catch {
+    // fetch only throws when no response arrives: server down, wrong URL, or blocked by CORS.
+    throw new ApiError(0, "Can't reach the server right now. Make sure the backend is running and try again.");
+  }
 
   if (res.status === 401 && retry) {
     const refreshed = await refreshAccessToken();

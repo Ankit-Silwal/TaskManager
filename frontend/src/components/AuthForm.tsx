@@ -4,13 +4,11 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/context/AuthContext";
+import { errorBox, fieldClass, primaryButton } from "./ui";
 
 interface AuthFormProps {
   mode: "login" | "register";
 }
-
-const inputClass =
-  "w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 dark:border-slate-700 dark:bg-slate-900";
 
 export function AuthForm({ mode }: AuthFormProps) {
   const { user, loading, login, register } = useAuth();
@@ -43,21 +41,28 @@ export function AuthForm({ mode }: AuthFormProps) {
   }
 
   return (
-    <main className="flex flex-1 items-center justify-center px-4 py-12">
-      <div className="w-full max-w-sm rounded-2xl border border-slate-200 bg-white p-8 shadow-sm dark:border-slate-800 dark:bg-slate-900/60">
-        <h1 className="text-2xl font-semibold tracking-tight">
-          {isRegister ? "Create your account" : "Welcome back"}
+    <main className="flex flex-1 items-center justify-center px-4 py-16">
+      <div className="w-full max-w-sm">
+        <div className="mb-10 flex items-center gap-2 text-sm font-medium text-muted">
+          <span className="h-2.5 w-2.5 rounded-full bg-accent" aria-hidden />
+          Task Manager
+        </div>
+
+        <h1 className="font-serif text-4xl leading-tight text-ink">
+          {isRegister ? "Let's get you settled in." : "Welcome back."}
         </h1>
-        <p className="mt-1 text-sm text-slate-500">
-          {isRegister ? "Start organizing your tasks." : "Log in to see your tasks."}
+        <p className="mt-3 text-muted">
+          {isRegister
+            ? "A quiet place to keep track of what matters."
+            : "Pick up right where you left off."}
         </p>
 
-        <form onSubmit={handleSubmit} className="mt-6 space-y-4">
+        <form onSubmit={handleSubmit} className="mt-10 space-y-4">
           {isRegister && (
-            <label className="block space-y-1">
-              <span className="text-sm font-medium">Name</span>
+            <label className="block space-y-1.5">
+              <span className="text-sm text-ink">Your name</span>
               <input
-                className={inputClass}
+                className={fieldClass}
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 autoComplete="name"
@@ -66,10 +71,10 @@ export function AuthForm({ mode }: AuthFormProps) {
               />
             </label>
           )}
-          <label className="block space-y-1">
-            <span className="text-sm font-medium">Email</span>
+          <label className="block space-y-1.5">
+            <span className="text-sm text-ink">Email</span>
             <input
-              className={inputClass}
+              className={fieldClass}
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
@@ -77,10 +82,10 @@ export function AuthForm({ mode }: AuthFormProps) {
               required
             />
           </label>
-          <label className="block space-y-1">
-            <span className="text-sm font-medium">Password</span>
+          <label className="block space-y-1.5">
+            <span className="text-sm text-ink">Password</span>
             <input
-              className={inputClass}
+              className={fieldClass}
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
@@ -88,29 +93,21 @@ export function AuthForm({ mode }: AuthFormProps) {
               minLength={isRegister ? 8 : undefined}
               required
             />
-            {isRegister && <span className="text-xs text-slate-500">At least 8 characters.</span>}
+            {isRegister && <span className="text-xs text-muted">At least 8 characters.</span>}
           </label>
 
-          {error && (
-            <p className="rounded-lg bg-red-50 px-3 py-2 text-sm text-red-700 dark:bg-red-950/50 dark:text-red-300">
-              {error}
-            </p>
-          )}
+          {error && <p className={errorBox}>{error}</p>}
 
-          <button
-            type="submit"
-            disabled={submitting}
-            className="w-full rounded-lg bg-indigo-600 px-4 py-2 text-sm font-medium text-white transition hover:bg-indigo-500 disabled:opacity-60"
-          >
-            {submitting ? "Please wait…" : isRegister ? "Create account" : "Log in"}
+          <button type="submit" disabled={submitting} className={`${primaryButton} w-full`}>
+            {submitting ? "One moment…" : isRegister ? "Create account" : "Log in"}
           </button>
         </form>
 
-        <p className="mt-6 text-center text-sm text-slate-500">
+        <p className="mt-8 text-sm text-muted">
           {isRegister ? "Already have an account? " : "New here? "}
           <Link
             href={isRegister ? "/login" : "/register"}
-            className="font-medium text-indigo-600 hover:underline dark:text-indigo-400"
+            className="font-medium text-accent underline-offset-4 hover:underline"
           >
             {isRegister ? "Log in" : "Create an account"}
           </Link>
