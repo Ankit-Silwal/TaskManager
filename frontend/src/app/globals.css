@@ -1,15 +1,15 @@
 @import "tailwindcss";
 
-/* Pink, teal and cream. Text is deep teal instead of black, and the page stays light everywhere. */
+/* Pink, teal and cream on light tan. Text is warm brown, never black, and the page stays light everywhere. */
 :root {
   color-scheme: light;
-  --bg: #fdf6ec;
-  --surface: #fffbf5;
-  --ink: #1f4e4b;
-  --muted: #6f8f8b;
-  --line: #f1e3d3;
-  --accent: #d6577b;
-  --accent-hover: #bf4569;
+  --bg: #f8eee2;
+  --surface: #fdf7ef;
+  --ink: #7a5440;
+  --muted: #94735c;
+  --line: #ecdcc9;
+  --accent: #c94f73;
+  --accent-hover: #b54265;
   --accent-soft: #fbe3ea;
   --teal: #2a8c80;
   --teal-soft: #d9efeb;
