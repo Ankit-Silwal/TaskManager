@@ -1,0 +1,51 @@
+
+         /\      Grafana   /‾‾/  
+    /\  /  \     |\  __   /  /   
+   /  \/    \    | |/ /  /   ‾‾\ 
+  /          \   |   (  |  (‾)  |
+ / __________ \  |_|\_\  \_____/ 
+
+
+     execution: local
+        script: test/load.js
+        output: -
+
+     scenarios: (100.00%) 1 scenario, 5 max VUs, 2m30s max duration (incl. graceful stop):
+              * limiter: 120 iterations for each of 5 VUs (maxDuration: 2m0s, gracefulStop: 30s)
+
+
+running (0m01.0s), 0/5 VUs, 600 complete and 0 interrupted iterations
+limiter ✓ [ 100% ] 5 VUs  0m01.0s/2m0s  600/600 iters, 120 per VU
+
+
+  █ TOTAL RESULTS 
+
+    checks_total.......: 600     608.250924/s
+    checks_succeeded...: 100.00% 600 out of 600
+    checks_failed......: 0.00%   0 out of 600
+
+    ✓ has RateLimit headers
+
+    CUSTOM
+    status_2xx.....................: 500    506.87577/s
+    status_429.....................: 100    101.375154/s
+
+    HTTP
+    http_req_duration..............: avg=7.71ms min=0s      med=5.73ms p(90)=8.15ms p(95)=11.86ms p(99)=23.39ms max=317.75ms
+      { expected_response:true }...: avg=8.78ms min=509.7µs med=6.05ms p(90)=9.17ms p(95)=13.74ms p(99)=25.62ms max=317.75ms
+    http_req_failed................: 16.66% 100 out of 600
+    http_reqs......................: 600    608.250924/s
+
+    EXECUTION
+    iteration_duration.............: avg=8.01ms min=0s      med=5.84ms p(90)=8.33ms p(95)=11.86ms p(99)=23.39ms max=340.42ms
+    iterations.....................: 600    608.250924/s
+
+    NETWORK
+    data_received..................: 1.1 MB 1.1 MB/s
+    data_sent......................: 202 kB 205 kB/s
+
+
+
+
+running (0m01.0s), 0/5 VUs, 600 complete and 0 interrupted iterations
+limiter ✓ [ 100% ] 5 VUs  0m01.0s/2m0s  600/600 iters, 120 per VU
