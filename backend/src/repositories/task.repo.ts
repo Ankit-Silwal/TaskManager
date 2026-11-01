@@ -2,10 +2,21 @@ import {prisma} from "../config/prisma.js"
 import type { TaskPriority, TaskStatus } from "../generated/prisma/enums.js"
 
 export const taskRepo={
-  findAllByUser(userId:string,status?:TaskStatus){
+  findPageByUser(userId:string,opts:{status?:TaskStatus|undefined,limit:number,cursor?:string|undefined}){
+    const {status,limit,cursor}=opts
     return prisma.task.findMany({
       where:status?{userId,status}:{userId},
-      orderBy:{createdAt:"desc"}
+      orderBy:[{createdAt:"desc"},{id:"desc"}],
+      take:limit+1,
+      ...(cursor?{cursor:{id:cursor},skip:1}:{})
+    })
+  },
+  // Number of tasks per status for one user, e.g. [{status:"DONE",_count:{_all:3}}, ...]
+  countByStatus(userId:string){
+    return prisma.task.groupBy({
+      by:["status"],
+      where:{userId},
+      _count:{_all:true}
     })
   },
   findByIdForUser(id:string,userId:string){

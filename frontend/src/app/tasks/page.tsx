@@ -1,9 +1,9 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/context/AuthContext";
-import { ApiError, createTask, deleteTask, listTasks, updateTask } from "@/lib/api";
+import { ApiError, createTask, deleteTask, getTaskCounts, listTasks, updateTask } from "@/lib/api";
 import { STATUS_LABELS, type Task, type TaskInput, type TaskStatus } from "@/lib/types";
 import { TaskForm } from "@/components/TaskForm";
 import { TaskItem } from "@/components/TaskItem";
@@ -23,10 +23,16 @@ function greeting() {
 export default function TasksPage() {
   const { user, loading, logout } = useAuth();
   const router = useRouter();
+  // `tasks` holds only the pages loaded so far for the current tab, not every task the user has.
   const [tasks, setTasks] = useState<Task[]>([]);
+  const [hasMore, setHasMore] = useState(false);
+  const [counts, setCounts] = useState<Record<TaskStatus, number>>({ TODO: 0, IN_PROGRESS: 0, DONE: 0 });
   const [filter, setFilter] = useState<Filter>("ALL");
   const [fetching, setFetching] = useState(true);
+  const [loadingMore, setLoadingMore] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  // The tab the latest request belongs to, so a slow "load more" can't add tasks to a tab the user already left.
+  const filterRef = useRef<Filter>(filter);
 
   useEffect(() => {
     if (!loading && !user) router.replace("/login");
@@ -45,16 +51,34 @@ export default function TasksPage() {
     [logout, router],
   );
 
+  const showError = useCallback((e: unknown) => {
+    setError(e instanceof Error ? e.message : "Something went wrong");
+  }, []);
+
+  const refreshCounts = useCallback(() => {
+    getTaskCounts()
+      .then(setCounts)
+      .catch((err) => handleError(err).catch(showError));
+  }, [handleError, showError]);
+
+  useEffect(() => {
+    if (user) refreshCounts();
+  }, [user, refreshCounts]);
+
+  // First page of the selected tab. Runs again whenever the tab changes.
   useEffect(() => {
     if (!user) return;
+    filterRef.current = filter;
     let cancelled = false;
-    listTasks()
-      .then((data) => {
-        if (!cancelled) setTasks(data);
+    listTasks({ status: filter === "ALL" ? undefined : filter })
+      .then((page) => {
+        if (cancelled) return;
+        setTasks(page.tasks);
+        setHasMore(page.nextCursor !== null);
       })
       .catch((err) =>
         handleError(err).catch((e) => {
-          if (!cancelled) setError(e instanceof Error ? e.message : "Could not load tasks");
+          if (!cancelled) showError(e);
         }),
       )
       .finally(() => {
@@ -63,12 +87,51 @@ export default function TasksPage() {
     return () => {
       cancelled = true;
     };
-  }, [user, handleError]);
+  }, [user, filter, handleError, showError]);
+
+  function selectFilter(next: Filter) {
+    if (next === filter) return;
+    setFetching(true);
+    setError(null);
+    setTasks([]);
+    setHasMore(false);
+    setFilter(next);
+  }
+
+  async function handleLoadMore() {
+    const requestedFilter = filter;
+    // Continue after the last task on screen. Using it (rather than the last nextCursor) keeps working
+    // even if the user deleted that task in the meantime.
+    const last = tasks.at(-1);
+    setLoadingMore(true);
+    try {
+      const page = await listTasks({
+        status: requestedFilter === "ALL" ? undefined : requestedFilter,
+        cursor: last?.id,
+      });
+      if (filterRef.current !== requestedFilter) return;
+      setTasks((prev) => {
+        const seen = new Set(prev.map((t) => t.id));
+        return [...prev, ...page.tasks.filter((t) => !seen.has(t.id))];
+      });
+      setHasMore(page.nextCursor !== null);
+    } catch (err) {
+      await handleError(err).catch(showError);
+    } finally {
+      setLoadingMore(false);
+    }
+  }
+
+  // Whether a task belongs in the list for the current tab.
+  function inCurrentTab(task: Task) {
+    return filter === "ALL" || task.status === filter;
+  }
 
   async function handleCreate(input: TaskInput) {
     try {
       const task = await createTask(input);
-      setTasks((prev) => [task, ...prev]);
+      if (inCurrentTab(task)) setTasks((prev) => [task, ...prev]);
+      refreshCounts();
     } catch (err) {
       await handleError(err);
     }
@@ -77,7 +140,11 @@ export default function TasksPage() {
   async function handleUpdate(id: string, input: Partial<TaskInput>) {
     try {
       const updated = await updateTask(id, input);
-      setTasks((prev) => prev.map((t) => (t.id === id ? updated : t)));
+      // A status change can move the task out of the current tab.
+      setTasks((prev) =>
+        prev.flatMap((t) => (t.id !== id ? [t] : inCurrentTab(updated) ? [updated] : [])),
+      );
+      if (input.status !== undefined) refreshCounts();
     } catch (err) {
       await handleError(err);
     }
@@ -87,6 +154,7 @@ export default function TasksPage() {
     try {
       await deleteTask(id);
       setTasks((prev) => prev.filter((t) => t.id !== id));
+      refreshCounts();
     } catch (err) {
       await handleError(err);
     }
@@ -103,14 +171,13 @@ export default function TasksPage() {
     );
   }
 
-  const counts: Record<Filter, number> = {
-    ALL: tasks.length,
-    TODO: tasks.filter((t) => t.status === "TODO").length,
-    IN_PROGRESS: tasks.filter((t) => t.status === "IN_PROGRESS").length,
-    DONE: tasks.filter((t) => t.status === "DONE").length,
+  // Counts come from the server (GET /api/tasks/counts), because the page only holds the tasks loaded so far.
+  const tabCounts: Record<Filter, number> = {
+    ALL: counts.TODO + counts.IN_PROGRESS + counts.DONE,
+    ...counts,
   };
-  const remaining = counts.ALL - counts.DONE;
-  const visible = filter === "ALL" ? tasks : tasks.filter((t) => t.status === filter);
+  const remaining = counts.TODO + counts.IN_PROGRESS;
+  const visible = tasks;
   const firstName = user.name.split(" ")[0];
 
   return (
@@ -133,7 +200,7 @@ export default function TasksPage() {
           {fetching
             ? "Gathering your tasks…"
             : remaining === 0
-              ? counts.ALL === 0
+              ? tabCounts.ALL === 0
                 ? "Nothing on your plate yet."
                 : "Everything's done. Enjoy the quiet."
               : `You have ${remaining} ${remaining === 1 ? "thing" : "things"} left to do.`}
@@ -149,7 +216,7 @@ export default function TasksPage() {
               <button
                 key={f}
                 type="button"
-                onClick={() => setFilter(f)}
+                onClick={() => selectFilter(f)}
                 aria-pressed={filter === f}
                 className={`rounded-full px-3 py-1 text-sm transition ${
                   filter === f
@@ -158,7 +225,7 @@ export default function TasksPage() {
                 }`}
               >
                 {f === "ALL" ? "All" : STATUS_LABELS[f]}
-                <span className="ml-1.5 opacity-60">{counts[f]}</span>
+                <span className="ml-1.5 opacity-60">{tabCounts[f]}</span>
               </button>
             ))}
           </nav>
@@ -177,11 +244,25 @@ export default function TasksPage() {
               </p>
             </div>
           ) : (
-            <ul className="space-y-2">
-              {visible.map((task) => (
-                <TaskItem key={task.id} task={task} onUpdate={handleUpdate} onDelete={handleDelete} />
-              ))}
-            </ul>
+            <>
+              <ul className="space-y-2">
+                {visible.map((task) => (
+                  <TaskItem key={task.id} task={task} onUpdate={handleUpdate} onDelete={handleDelete} />
+                ))}
+              </ul>
+              {hasMore && (
+                <div className="flex justify-center pt-2">
+                  <button
+                    type="button"
+                    onClick={handleLoadMore}
+                    disabled={loadingMore}
+                    className={ghostButton}
+                  >
+                    {loadingMore ? "Loading…" : "Load more"}
+                  </button>
+                </div>
+              )}
+            </>
           )}
         </section>
       </main>

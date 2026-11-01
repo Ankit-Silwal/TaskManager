@@ -115,10 +115,24 @@ export async function logoutUser() {
   }
 }
 
-export async function listTasks(status?: TaskStatus) {
-  const query = status ? `?status=${status}` : "";
-  const data = await request<{ tasks: Task[] }>(`/api/tasks${query}`);
-  return data.tasks;
+export interface TaskPage {
+  tasks: Task[];
+  // Pass this back as `cursor` to get the next page; null means there are no more tasks.
+  nextCursor: string | null;
+}
+
+export async function listTasks(opts: { status?: TaskStatus; cursor?: string; limit?: number } = {}) {
+  const params = new URLSearchParams();
+  if (opts.status) params.set("status", opts.status);
+  if (opts.cursor) params.set("cursor", opts.cursor);
+  if (opts.limit) params.set("limit", String(opts.limit));
+  const query = params.size > 0 ? `?${params}` : "";
+  return request<TaskPage>(`/api/tasks${query}`);
+}
+
+export async function getTaskCounts() {
+  const data = await request<{ counts: Record<TaskStatus, number> }>("/api/tasks/counts");
+  return data.counts;
 }
 
 export async function createTask(input: TaskInput) {

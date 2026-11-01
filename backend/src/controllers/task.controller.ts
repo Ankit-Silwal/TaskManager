@@ -3,8 +3,11 @@ import {
   createTask,
   deleteTask,
   getTask,
+  getTaskCounts,
   getTasks,
   parseCreateTask,
+  parseCursor,
+  parseLimit,
   parseStatusFilter,
   parseUpdateTask,
   updateTask
@@ -18,7 +21,9 @@ const BAD_REQUEST_PREFIXES=[
   "Status must",
   "Priority must",
   "Due date",
-  "Nothing to update"
+  "Nothing to update",
+  "Limit must",
+  "Cursor is"
 ]
 
 function handleError(err:unknown,res:Response){
@@ -45,8 +50,19 @@ function taskIdParam(req:Request):string{
 export async function getTasksController(req:Request,res:Response){
   try{
     const status=parseStatusFilter(req.query.status)
-    const tasks=await getTasks(req.user!.sub,status)
-    return res.status(200).json({tasks})
+    const limit=parseLimit(req.query.limit)
+    const cursor=parseCursor(req.query.cursor)
+    const {tasks,nextCursor}=await getTasks(req.user!.sub,{status,limit,cursor})
+    return res.status(200).json({tasks,nextCursor})
+  }catch(err){
+    return handleError(err,res)
+  }
+}
+
+export async function getTaskCountsController(req:Request,res:Response){
+  try{
+    const counts=await getTaskCounts(req.user!.sub)
+    return res.status(200).json({counts})
   }catch(err){
     return handleError(err,res)
   }
