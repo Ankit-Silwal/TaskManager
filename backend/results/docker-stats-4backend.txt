@@ -1,0 +1,90 @@
+t=20
+taskmanager-backend-4 61.09%
+taskmanager-backend-2 50.77%
+taskmanager-backend-3 61.62%
+taskmanager-frontend-1 0.00%
+taskmanager-backend-1 49.86%
+taskmanager-nginx-1 77.47%
+taskmanager-postgres-1 138.41%
+taskmanager-redis-1 12.50%
+t=40
+taskmanager-backend-4 83.66%
+taskmanager-backend-2 75.89%
+taskmanager-backend-3 75.80%
+taskmanager-frontend-1 0.00%
+taskmanager-backend-1 74.56%
+taskmanager-nginx-1 45.03%
+taskmanager-postgres-1 78.23%
+taskmanager-redis-1 17.30%
+t=60
+taskmanager-backend-4 83.39%
+taskmanager-backend-2 82.34%
+taskmanager-backend-3 83.16%
+taskmanager-frontend-1 0.00%
+taskmanager-backend-1 84.82%
+taskmanager-nginx-1 71.22%
+taskmanager-postgres-1 111.30%
+taskmanager-redis-1 16.81%
+t=80
+taskmanager-backend-4 93.96%
+taskmanager-backend-2 92.32%
+taskmanager-backend-3 86.30%
+taskmanager-frontend-1 0.00%
+taskmanager-backend-1 90.39%
+taskmanager-nginx-1 106.76%
+taskmanager-postgres-1 131.07%
+taskmanager-redis-1 13.38%
+t=100
+taskmanager-backend-4 93.65%
+taskmanager-backend-2 96.63%
+taskmanager-backend-3 105.82%
+taskmanager-frontend-1 0.00%
+taskmanager-backend-1 107.52%
+taskmanager-nginx-1 136.56%
+taskmanager-postgres-1 154.29%
+taskmanager-redis-1 13.33%
+t=120
+taskmanager-backend-4 102.47%
+taskmanager-backend-2 93.11%
+taskmanager-backend-3 99.43%
+taskmanager-frontend-1 0.00%
+taskmanager-backend-1 100.02%
+taskmanager-nginx-1 91.57%
+taskmanager-postgres-1 141.25%
+taskmanager-redis-1 20.33%
+t=140
+taskmanager-backend-4 96.06%
+taskmanager-backend-2 105.98%
+taskmanager-backend-3 95.13%
+taskmanager-frontend-1 0.00%
+taskmanager-backend-1 109.05%
+taskmanager-nginx-1 87.48%
+taskmanager-postgres-1 135.88%
+taskmanager-redis-1 15.11%
+t=160
+taskmanager-backend-4 94.16%
+taskmanager-backend-2 95.05%
+taskmanager-backend-3 92.86%
+taskmanager-frontend-1 0.00%
+taskmanager-backend-1 101.49%
+taskmanager-nginx-1 97.72%
+taskmanager-postgres-1 160.25%
+taskmanager-redis-1 13.23%
+t=180
+taskmanager-backend-4 0.38%
+taskmanager-backend-2 2.84%
+taskmanager-backend-3 2.98%
+taskmanager-frontend-1 0.00%
+taskmanager-backend-1 2.21%
+taskmanager-nginx-1 0.00%
+taskmanager-postgres-1 0.05%
+taskmanager-redis-1 0.27%
+t=200
+taskmanager-backend-4 0.12%
+taskmanager-backend-2 0.15%
+taskmanager-backend-3 0.15%
+taskmanager-frontend-1 0.00%
+taskmanager-backend-1 0.06%
+taskmanager-nginx-1 0.00%
+taskmanager-postgres-1 4.60%
+taskmanager-redis-1 0.33%
