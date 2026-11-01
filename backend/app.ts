@@ -7,13 +7,12 @@ const app=express();
 app.set("trust proxy",Number(process.env.TRUST_PROXY??0));
 app.use((req,res,next)=>{
   res.setHeader("X-Instance",os.hostname())
-  res.setHeader("X-Client-IP",req.ip??"none");
   next();
 })
 app.use(cors({
   origin:process.env.CLIENT_ORIGIN??"http://localhost:3000",
   credentials:true,
-  exposedHeaders:["RateLimit-limit","RateLimit-Remaining","RateLimit-Reset","Retry-Afters"]
+  exposedHeaders:["RateLimit-limit","RateLimit-Remaining","RateLimit-Reset","Retry-After"]
 }));
 app.use(express.json());
 app.use(cookieparser());

@@ -20,8 +20,7 @@ export function createRateLimiter(options:RateLimitOptions){
     try{
       const key=`${options.name}:${options.keyGenerator(req)}`
       const {count,resetAt}=await store.increment(key,options.windowMs)
-      const retryAfterSec=Math.max(1,Math.ceil(resetAt-Date.now())/1000);
-      
+       const retryAfterSec=Math.max(1,Math.ceil((resetAt-Date.now())/1000));
       res.setHeader("RateLimit-Limit",options.max);
       res.setHeader("RateLimit-Remaining",Math.max(0,options.max-count))
       res.setHeader("RateLimit-Reset",retryAfterSec)

@@ -10,7 +10,7 @@ export const loginRateLimiter=createRateLimiter({
 
 export const registerLimiter=createRateLimiter({
   name:"register",
-  windowMs:5*60*100,
+  windowMs:5*60*1000,
   max:10,
   keyGenerator:byIp
 })
