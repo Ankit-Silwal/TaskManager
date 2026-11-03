@@ -260,7 +260,18 @@ Hits = 415,143 − 93,314 = 321,829, so **about 78% of list reads never touched 
 ### Errors seen under overload (from the nginx log)
 
 - **114 × `upstream timed out ... while connecting to upstream`**, all in the last 40 s of 5b (asked ~4,600 req/s). The backends were too busy to accept new connections, so nginx gave up after 60 s and k6 timed out. This is the overload cliff, not a bug.
-- **19 × `Connection reset by peer` and 5 × `upstream prematurely closed connection`**, in both runs. This is a known Node + nginx keepalive mismatch: Node closes idle keep-alive connections after 5 s (`server.keepAliveTimeout`), while nginx keeps idle upstream connections for up to 60 s. Sometimes nginx sends a request on a socket Node is closing at that moment. nginx retries most GETs on another backend, so only a few reached the client. **Open fix:** set `server.keepAliveTimeout` above nginx's upstream keepalive timeout (for example 65 s, with `headersTimeout` a bit higher) in `index.ts`, or lower nginx's upstream `keepalive_timeout` below 5 s.
+- **19 × `Connection reset by peer` and 5 × `upstream prematurely closed connection`**, in both runs. This is a known Node + nginx keepalive mismatch: Node closes idle keep-alive connections after 5 s (`server.keepAliveTimeout`), while nginx keeps idle upstream connections for up to 60 s. Sometimes nginx sends a request on a socket Node is closing at that moment. nginx retries most GETs on another backend, so only a few reached the client.
+
+**Fixed (2026-11-04)** in `index.ts`: `server.keepAliveTimeout=65000` (above nginx's 60 s, so nginx always closes an idle connection first) and `server.headersTimeout=66000` (must be above `keepAliveTimeout`, or it can close idle connections first). Neither 5 s nor 60 s was written anywhere: both were defaults. Re-run of 5b with the fix (`k6-paginated-cache-keepalive-fix.txt`):
+
+| nginx log during the run | 5b before | 5b after the fix |
+|---|---|---|
+| `Connection reset by peer` | 19 | **0** |
+| `upstream prematurely closed connection` | 5 | **0** |
+| `upstream timed out` (overload in the last step) | 114 | 85 |
+| Failed requests (k6) | 8 of 488,048 | **0 of 490,889** |
+
+Throughput was the same (~2,850 req/s with p95 125 ms). The fix is about correctness, not speed.
 
 ### What Test 5 tells us
 
@@ -291,7 +302,7 @@ Hits = 415,143 − 93,314 = 321,829, so **about 78% of list reads never touched 
 - ✅ Fixed: `ratelimit.middleware.ts`: `Math.ceil(resetAt-Date.now())/1000` applied `ceil` before the division, so `Retry-After` could be fractional. Now `Math.ceil((resetAt-Date.now())/1000)` (checked: `Retry-After: 299`).
 - ✅ Fixed: `app.ts`: `exposedHeaders` had `"Retry-Afters"`, so browsers couldn't read `Retry-After`.
 - Still open: `redis.ts`: no `disableOfflineQueue`. With `REDIS_URL` set and Redis down, commands queue and requests can hang instead of falling through. Not tested.
-- Still open: `index.ts`: Node's default `keepAliveTimeout` (5 s) is shorter than nginx's upstream keepalive (60 s), which caused a few `Connection reset by peer` errors in Test 5 (see there).
+- ✅ Fixed: `index.ts`: Node's default `keepAliveTimeout` (5 s) was shorter than nginx's upstream keepalive (60 s), which caused a few `Connection reset by peer` errors in Test 5. Now 65 s / `headersTimeout` 66 s (see Test 5).
 
 ## Re-run
 
