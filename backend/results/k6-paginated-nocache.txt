@@ -1,0 +1,98 @@
+time="2026-11-03T14:16:15+05:30" level=warning msg="Insufficient VUs, reached 3000 active VUs and cannot initialize more" executor=ramping-arrival-rate scenario=stress
+
+
+  █ THRESHOLDS 
+
+    http_req_duration{seg:0}
+    ✓ 'max>=0' max=517.39ms
+
+    http_req_duration{seg:1}
+    ✓ 'max>=0' max=919ms
+
+    http_req_duration{seg:2}
+    ✓ 'max>=0' max=4.83s
+
+    http_req_duration{seg:3}
+    ✓ 'max>=0' max=4.73s
+
+    http_req_duration{seg:4}
+    ✓ 'max>=0' max=10.04s
+
+    http_req_failed{seg:0}
+    ✓ 'rate>=0' rate=0.00%
+
+    http_req_failed{seg:1}
+    ✓ 'rate>=0' rate=0.00%
+
+    http_req_failed{seg:2}
+    ✓ 'rate>=0' rate=0.00%
+
+    http_req_failed{seg:3}
+    ✓ 'rate>=0' rate=0.00%
+
+    http_req_failed{seg:4}
+    ✓ 'rate>=0' rate=0.00%
+
+    http_reqs{seg:0}
+    ✓ 'count>=0' count=37488
+
+    http_reqs{seg:1}
+    ✓ 'count>=0' count=74606
+
+    http_reqs{seg:2}
+    ✓ 'count>=0' count=99411
+
+    http_reqs{seg:3}
+    ✓ 'count>=0' count=104802
+
+    http_reqs{seg:4}
+    ✓ 'count>=0' count=97901
+
+
+  █ TOTAL RESULTS 
+
+    checks_total.......: 414208 2053.02847/s
+    checks_succeeded...: 99.99% 414207 out of 414208
+    checks_failed......: 0.00%  1 out of 414208
+
+    ✗ 2xx or 429
+      ↳  99% — ✓ 414207 / ✗ 1
+
+    CUSTOM
+    status_2xx.....................: 414207 2053.023514/s
+    status_5xx.....................: 1      0.004957/s
+
+    HTTP
+    http_req_duration..............: avg=730.44ms min=555.6µs med=90.97ms  p(90)=2.04s   p(95)=3.34s    p(99)=4.37s    max=10.04s  
+      { expected_response:true }...: avg=730.44ms min=555.6µs med=90.97ms  p(90)=2.04s   p(95)=3.34s    p(99)=4.37s    max=10.04s  
+      { seg:0 }....................: avg=8.36ms   min=1.04ms  med=3.82ms   p(90)=11.18ms p(95)=19.91ms  p(99)=61.35ms  max=517.39ms
+      { seg:1 }....................: avg=31.76ms  min=555.6µs med=7.59ms   p(90)=83.48ms p(95)=128.41ms p(99)=388.13ms max=919ms   
+      { seg:2 }....................: avg=605.19ms min=1.59ms  med=288.32ms p(90)=1.65s   p(95)=1.81s    p(99)=2.37s    max=4.83s   
+      { seg:3 }....................: avg=1.16s    min=3.24ms  med=1.49s    p(90)=2.09s   p(95)=2.3s     p(99)=2.94s    max=4.73s   
+      { seg:4 }....................: avg=1.2s     min=3.19ms  med=214.87ms p(90)=3.98s   p(95)=4.27s    p(99)=5.03s    max=10.04s  
+    http_req_failed................: 0.00%  1 out of 414208
+      { seg:0 }....................: 0.00%  0 out of 37488
+      { seg:1 }....................: 0.00%  0 out of 74606
+      { seg:2 }....................: 0.00%  0 out of 99411
+      { seg:3 }....................: 0.00%  1 out of 104802
+      { seg:4 }....................: 0.00%  0 out of 97901
+    http_reqs......................: 414208 2053.02847/s
+      { seg:0 }....................: 37488  185.809862/s
+      { seg:1 }....................: 74606  369.785813/s
+      { seg:2 }....................: 99411  492.732186/s
+      { seg:3 }....................: 104802 519.452762/s
+      { seg:4 }....................: 97901  485.247847/s
+
+    EXECUTION
+    dropped_iterations.............: 163238 809.091716/s
+    iteration_duration.............: avg=730.57ms min=575.6µs med=91.15ms  p(90)=2.04s   p(95)=3.34s    p(99)=4.37s    max=10.04s  
+    iterations.....................: 414208 2053.02847/s
+    vus............................: 1275   min=2           max=3000
+    vus_max........................: 3000   min=500         max=3000
+
+    NETWORK
+    data_received..................: 932 MB 4.6 MB/s
+    data_sent......................: 158 MB 781 kB/s
+
+
+

@@ -1,0 +1,8 @@
+# Redis INFO commandstats after each run
+## cache OFF
+cmdstat_eval:calls=414207,usec=9025155,usec_per_call=21.79,rejected_calls=0,failed_calls=0
+## cache ON
+cmdstat_eval:calls=488045,usec=10597264,usec_per_call=21.71,rejected_calls=0,failed_calls=0
+cmdstat_hget:calls=415143,usec=1958339,usec_per_call=4.72,rejected_calls=0,failed_calls=0
+cmdstat_hset:calls=93314,usec=1340626,usec_per_call=14.37,rejected_calls=0,failed_calls=0
+cmdstat_del:calls=72902,usec=753514,usec_per_call=10.34,rejected_calls=0,failed_calls=0

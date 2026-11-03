@@ -4,6 +4,8 @@ Tests: `backend/test/` (`seed.ts`, `load.js`, `cleanup.ts`). Raw k6 output: `k6-
 
 Tests 1 to 3 ran one Node process directly on Windows. **Test 4** (further down) runs the same API in Docker behind nginx and compares 1 backend with 4. Its raw output: `k6-docker-1backend.txt`, `k6-docker-4backend.txt`, `docker-stats-1backend.txt`, `docker-stats-4backend.txt`, `host-cpu-4backend.txt`.
 
+**Test 5** adds cursor pagination and a Redis cache for the task list, and runs with the cache off and on. Raw output: `k6-paginated-nocache.txt`, `k6-paginated-cache.txt`, `docker-stats-paginated-nocache.txt`, `docker-stats-paginated-cache.txt`, `redis-commandstats-paginated.txt`.
+
 ## Architecture / versions tested
 
 | Part | Version / setup |
@@ -197,12 +199,89 @@ Also seen: during a small curl check (40 requests) one backend got 16 and the ot
 - One run per setup, so no variance data. The two runs used slightly different rate steps (800 to 2400 vs 1000 to 5000), which is why the "asked" columns differ.
 - The 1-backend failure run (nginx defaults) was overwritten by the re-run; its numbers above come from the k6 summary read during the session.
 
+## Test 5: pagination and a Redis cache for the task list (2026-11-03)
+
+Test 4 showed Postgres growing the most when we went to 4 backends (about 0.5 to 1.5 cores). Two changes aim at that:
+
+1. **Cursor pagination.** `GET /api/tasks` returns at most 20 tasks (`?limit=` up to 100) plus a `nextCursor`. New indexes `(userId, createdAt)` and `(userId, status, createdAt)` let Postgres jump to the page instead of sorting all of a user's tasks.
+2. **Cache-aside in Redis** (`src/cache/taskCache.ts`). The first page of each tab and the tab counts are stored per user in one Redis hash `taskCache:<userId>` (fields like `list:ALL:20`, `counts`) with a 60 s TTL. Every create, update or delete runs `DEL taskCache:<userId>` **after** the database write. "Load more" pages (with a cursor) are not cached.
+
+To see what each change does on its own, the same test ran twice: **5a** with pagination and the cache switched off (`TASK_CACHE=off`), **5b** with both.
+
+### Setup
+
+Same as Test 4 with 4 backends: Docker Compose, nginx (12 workers, 4096 connections each), Redis rate limiter, `postgres:18`, same laptop. Same k6 `stress` scenario: 85% `GET /api/tasks` (first page, default limit 20), 15% `POST /api/tasks`, 20,000 seeded users, steps averaging about 940, 1875, 2875, 3750 and 4625 req/s (40 s each). Before each run: fresh seed, rate-limit counters and cached pages deleted, Redis command stats reset.
+
+### Results
+
+Done = requests finished in the 40 s step / 40.
+
+| Asked | Test 4 (no pagination, no cache) | 5a: pagination, cache off | 5b: pagination + cache |
+|---|---|---|---|
+| ~940 req/s | 940 done, p95 32 ms | 937, p95 20 ms | 937, p95 **10 ms** |
+| ~1875 req/s | 1875, p95 52 ms | 1865, p95 128 ms | 1875, p95 111 ms |
+| ~2875 req/s | 2320, p95 **2.94 s** ❌ | 2485, p95 **1.81 s** ❌ | **2854, p95 140 ms** ✅ |
+| ~3750 req/s | 2360, p95 4.59 s | 2620, p95 2.30 s | 3628, p95 361 ms (p99 7.3 s) ⚠️ |
+| ~4625 req/s | 2480, p95 5.23 s | 2448, p95 4.27 s | 2908, p95 6.11 s ❌ |
+
+| | Test 4 | 5a: pagination | 5b: + cache |
+|---|---|---|---|
+| Highest step held with p95 under 200 ms | ~1,875 | ~1,875 | **~2,850** |
+| Max finished req/s | ~2,480 | ~2,620 | **~3,630** |
+| Failed requests | 0 | 1 of 414,208 | 8 of 488,048 (all in the overloaded last 2 steps) |
+
+**The cache raised the ceiling by about 50%** (from ~1,875 to ~2,850 req/s with p95 still around 140 ms). At ~2,875 req/s, 5a was already drowning (p95 1.8 s) while 5b answered almost everything in time. **Pagination alone changed little in this test**, for the reason explained below.
+
+### Cache hit rate
+
+From `INFO commandstats` in Redis during 5b:
+
+| Command | Calls | Meaning |
+|---|---|---|
+| `HGET` | 415,143 | every `GET /api/tasks` asks the cache first |
+| `HSET` | 93,314 | a miss: read Postgres, then store the page |
+| `DEL` | 72,902 | a write (POST) cleared that user's cache |
+
+Hits = 415,143 − 93,314 = 321,829, so **about 78% of list reads never touched Postgres**. That is higher than expected for a test that picks a random user out of 20,000 for every request and writes 15% of the time. Each user got about 24 requests in the run, so several fell inside the 60 s TTL between writes.
+
+### Why: CPU per container under load
+
+| | 5a: cache off | 5b: cache on |
+|---|---|---|
+| Postgres | 145 to 172% | **70 to 92%** (about half) |
+| Each backend | 85 to 115% | 90 to 106% |
+| nginx | 85 to 163% | 110 to 220% |
+| Redis | 11 to 20% | 14 to 33% |
+
+1. **The cache did what it was meant to do: it took load off Postgres.** Postgres CPU roughly halved while serving more requests.
+2. **The bottleneck moved again.** With Postgres relieved, the 4 backends were still at a full core each and nginx became the busiest container (up to 2.2 cores), all on a laptop already near 100% CPU (Test 4). Next limits: backend CPU per request and the machine itself.
+3. **Why pagination did not show here.** Seeded users start with 5 tasks and get only a few more during a run, so lists stay under the 20-task page size and responses are the same size with or without pagination. Its value is protection: without it, one user with 50,000 tasks gets all 50,000 rows on every request. Test 5a (~2,500 to 2,600) vs Test 4 (~2,400) is within run-to-run noise.
+
+### Errors seen under overload (from the nginx log)
+
+- **114 × `upstream timed out ... while connecting to upstream`**, all in the last 40 s of 5b (asked ~4,600 req/s). The backends were too busy to accept new connections, so nginx gave up after 60 s and k6 timed out. This is the overload cliff, not a bug.
+- **19 × `Connection reset by peer` and 5 × `upstream prematurely closed connection`**, in both runs. This is a known Node + nginx keepalive mismatch: Node closes idle keep-alive connections after 5 s (`server.keepAliveTimeout`), while nginx keeps idle upstream connections for up to 60 s. Sometimes nginx sends a request on a socket Node is closing at that moment. nginx retries most GETs on another backend, so only a few reached the client. **Open fix:** set `server.keepAliveTimeout` above nginx's upstream keepalive timeout (for example 65 s, with `headersTimeout` a bit higher) in `index.ts`, or lower nginx's upstream `keepalive_timeout` below 5 s.
+
+### What Test 5 tells us
+
+- **A cache helps when reads repeat between writes.** Here 78% of reads were served from Redis, Postgres CPU halved, and the ceiling rose about 50%.
+- **Invalidation works under load.** 72,902 writes each cleared the cache, and the next read rebuilt it from Postgres.
+- **Pagination is a safety limit**, not a speed-up for small lists. It will matter once some users have hundreds of tasks.
+- **Each fix moves the bottleneck**: Postgres in Test 4, then the backends, nginx and the laptop's CPU in Test 5.
+
+### Limits of Test 5
+
+- Everything still runs on one laptop, so the numbers are limited by that machine (see Test 4).
+- A real user reloading their own list would get an even higher hit rate. A write-heavy workload would get a lower one.
+- The `counts` endpoint and "load more" pages were not part of the k6 mix.
+- One run per setup, so differences of about 10% (Test 4 vs 5a) are noise.
+
 ## Limits of this test (read before trusting the numbers)
 
 - **k6, the server and Postgres shared one machine**, so they competed for CPU. Real capacity on separate machines is likely higher, but network latency would add to every request.
 - **Redis was not tested** in Tests 1 to 3. Docker was not running and no Redis server was installed, so the `RedisStore` path was unmeasured. (Test 4 above does use `RedisStore`.)
 - The ceiling (about 1,400 req/s) is for this machine, this mix and a task list of about 5 rows per user. It will be lower with bigger lists or heavier queries.
-- `GET /api/tasks` is **not paginated**. Tasks accumulate during the run (15% of requests are POSTs), so list responses grow. This is the likely first bottleneck at larger data sizes (305 MB received here).
+- `GET /api/tasks` was **not paginated** in Tests 1 to 4. Tasks accumulate during the run (15% of requests are POSTs), so list responses grow. (Paginated since Test 5.)
 - Login and register were not load tested. bcrypt (12 rounds) is CPU-heavy and will be far slower per request than the task routes.
 - The run used `tsx`, not a built app, and one run per scenario, so there is no variance data.
 
@@ -212,6 +291,7 @@ Also seen: during a small curl check (40 requests) one backend got 16 and the ot
 - ✅ Fixed: `ratelimit.middleware.ts`: `Math.ceil(resetAt-Date.now())/1000` applied `ceil` before the division, so `Retry-After` could be fractional. Now `Math.ceil((resetAt-Date.now())/1000)` (checked: `Retry-After: 299`).
 - ✅ Fixed: `app.ts`: `exposedHeaders` had `"Retry-Afters"`, so browsers couldn't read `Retry-After`.
 - Still open: `redis.ts`: no `disableOfflineQueue`. With `REDIS_URL` set and Redis down, commands queue and requests can hang instead of falling through. Not tested.
+- Still open: `index.ts`: Node's default `keepAliveTimeout` (5 s) is shorter than nginx's upstream keepalive (60 s), which caused a few `Connection reset by peer` errors in Test 5 (see there).
 
 ## Re-run
 
@@ -244,3 +324,21 @@ k6 run -e SCENARIO=stress -e RATES=800,1200,1600,2000,2400 test/load.js      # 1
 k6 run -e SCENARIO=stress -e RATES=1000,2000,3000,4000,5000 test/load.js     # after --scale backend=4
 ```
 Tokens expire after 15 minutes, so seed again before each run.
+
+### Re-run Test 5 (cache off vs on)
+
+```powershell
+# project root. Cache off:
+$env:TASK_CACHE="off"; docker compose up -d --build --scale backend=4; docker compose restart nginx
+# ...seed and clear counters as above, then:
+docker compose exec redis redis-cli CONFIG RESETSTAT
+k6 run -e SCENARIO=stress -e RATES=1000,2000,3000,4000,5000 test/load.js
+
+# Cache on (the default):
+Remove-Item Env:TASK_CACHE; docker compose up -d --scale backend=4; docker compose restart nginx
+# ...seed again, clear counters AND cached pages:
+docker compose exec redis sh -c "redis-cli --scan --pattern 'taskCache:*' | xargs -r redis-cli DEL"
+docker compose exec redis redis-cli CONFIG RESETSTAT
+k6 run -e SCENARIO=stress -e RATES=1000,2000,3000,4000,5000 test/load.js
+docker compose exec redis redis-cli INFO commandstats    # HGET = reads, HSET = misses, DEL = invalidations
+```

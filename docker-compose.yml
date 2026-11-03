@@ -41,6 +41,8 @@ services:
       REDIS_URL: redis://redis:6379
       CLIENT_ORIGIN: http://localhost:3000
       TRUST_PROXY: 1
+      # "off" disables the task list cache, e.g. `$env:TASK_CACHE="off"; docker compose up -d`
+      TASK_CACHE: ${TASK_CACHE:-on}
     depends_on:
       migrate:
         condition: service_completed_successfully

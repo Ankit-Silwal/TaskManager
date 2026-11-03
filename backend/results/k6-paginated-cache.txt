@@ -1,0 +1,103 @@
+time="2026-11-03T14:21:52+05:30" level=warning msg="Insufficient VUs, reached 3000 active VUs and cannot initialize more" executor=ramping-arrival-rate scenario=stress
+time="2026-11-03T14:22:44+05:30" level=warning msg="Request Failed" error="Get \"http://localhost:8000/api/tasks\": request timeout"
+time="2026-11-03T14:22:44+05:30" level=warning msg="Request Failed" error="Get \"http://localhost:8000/api/tasks\": request timeout"
+time="2026-11-03T14:22:45+05:30" level=warning msg="Request Failed" error="Get \"http://localhost:8000/api/tasks\": request timeout"
+time="2026-11-03T14:22:47+05:30" level=warning msg="Request Failed" error="Get \"http://localhost:8000/api/tasks\": request timeout"
+time="2026-11-03T14:22:48+05:30" level=warning msg="Request Failed" error="Post \"http://localhost:8000/api/tasks\": request timeout"
+
+
+  █ THRESHOLDS 
+
+    http_req_duration{seg:0}
+    ✓ 'max>=0' max=421.16ms
+
+    http_req_duration{seg:1}
+    ✓ 'max>=0' max=851.59ms
+
+    http_req_duration{seg:2}
+    ✓ 'max>=0' max=1.12s
+
+    http_req_duration{seg:3}
+    ✓ 'max>=0' max=1m0s
+
+    http_req_duration{seg:4}
+    ✓ 'max>=0' max=1m0s
+
+    http_req_failed{seg:0}
+    ✓ 'rate>=0' rate=0.00%
+
+    http_req_failed{seg:1}
+    ✓ 'rate>=0' rate=0.00%
+
+    http_req_failed{seg:2}
+    ✓ 'rate>=0' rate=0.00%
+
+    http_req_failed{seg:3}
+    ✓ 'rate>=0' rate=0.00%
+
+    http_req_failed{seg:4}
+    ✓ 'rate>=0' rate=0.00%
+
+    http_reqs{seg:0}
+    ✓ 'count>=0' count=37485
+
+    http_reqs{seg:1}
+    ✓ 'count>=0' count=74985
+
+    http_reqs{seg:2}
+    ✓ 'count>=0' count=114141
+
+    http_reqs{seg:3}
+    ✓ 'count>=0' count=145100
+
+    http_reqs{seg:4}
+    ✓ 'count>=0' count=116337
+
+
+  █ TOTAL RESULTS 
+
+    checks_total.......: 488048 2175.552601/s
+    checks_succeeded...: 99.99% 488040 out of 488048
+    checks_failed......: 0.00%  8 out of 488048
+
+    ✗ 2xx or 429
+      ↳  99% — ✓ 488040 / ✗ 8
+
+    CUSTOM
+    status_2xx.....................: 488040 2175.51694/s
+    status_5xx.....................: 3      0.013373/s
+
+    HTTP
+    http_req_duration..............: avg=329.29ms min=0s      med=61.05ms  p(90)=239.87ms p(95)=336.52ms p(99)=9.7s     max=1m0s    
+      { expected_response:true }...: avg=328.68ms min=0s      med=61.05ms  p(90)=239.86ms p(95)=336.51ms p(99)=9.69s    max=58.95s  
+      { seg:0 }....................: avg=6.22ms   min=1.02ms  med=3.43ms   p(90)=6.18ms   p(95)=10.16ms  p(99)=54.36ms  max=421.16ms
+      { seg:1 }....................: avg=22.59ms  min=0s      med=4.78ms   p(90)=60.62ms  p(95)=111.43ms p(99)=241.06ms max=851.59ms
+      { seg:2 }....................: avg=41.15ms  min=557.9µs med=19.8ms   p(90)=103.44ms p(95)=139.98ms p(99)=252.38ms max=1.12s   
+      { seg:3 }....................: avg=282.64ms min=1.65ms  med=86.25ms  p(90)=251.18ms p(95)=361.08ms p(99)=7.31s    max=1m0s    
+      { seg:4 }....................: avg=971.94ms min=21.25ms med=168.81ms p(90)=403.71ms p(95)=6.11s    p(99)=17.05s   max=1m0s    
+    http_req_failed................: 0.00%  8 out of 488048
+      { seg:0 }....................: 0.00%  0 out of 37485
+      { seg:1 }....................: 0.00%  3 out of 74985
+      { seg:2 }....................: 0.00%  0 out of 114141
+      { seg:3 }....................: 0.00%  3 out of 145100
+      { seg:4 }....................: 0.00%  2 out of 116337
+    http_reqs......................: 488048 2175.552601/s
+      { seg:0 }....................: 37485  167.095428/s
+      { seg:1 }....................: 74985  334.25772/s
+      { seg:2 }....................: 114141 508.8019/s
+      { seg:3 }....................: 145100 646.806631/s
+      { seg:4 }....................: 116337 518.590923/s
+
+    EXECUTION
+    dropped_iterations.............: 89387  398.456956/s
+    iteration_duration.............: avg=329.44ms min=0s      med=61.21ms  p(90)=240.13ms p(95)=336.9ms  p(99)=9.7s     max=1m0s    
+    iterations.....................: 488048 2175.552601/s
+    vus............................: 11     min=2           max=3000
+    vus_max........................: 3000   min=500         max=3000
+
+    NETWORK
+    data_received..................: 1.1 GB 5.0 MB/s
+    data_sent......................: 186 MB 828 kB/s
+
+
+
