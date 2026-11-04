@@ -30,5 +30,16 @@ export const authRepo={
   },
   deleteSession(id:string){
     return prisma.refreshSession.deleteMany({where:{id}})
+  },
+  deleteExpiredSessionBatch(limit:number){
+    const now=new Date()
+    return prisma.$executeRaw`
+    Delete from refresh_sessions
+    where id in (
+      select id from refresh_sessions
+      where "expiredAt"<${now} or "revokedAt" is not null
+      limit ${limit}
+    )
+    `
   }
 }

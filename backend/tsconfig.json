@@ -43,5 +43,5 @@
     "skipLibCheck": true,
   },
   // Only the app goes into dist/. test/ and prisma7.config.ts are left out.
-  "include": ["index.ts", "app.ts", "routes.ts", "src/**/*.ts"]
+  "include": ["index.ts", "app.ts", "routes.ts", "src/**/*.ts","worker.ts"]
 }

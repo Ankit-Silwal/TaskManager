@@ -9,7 +9,8 @@
   "scripts": {
     "build":"tsc",
     "dev": "tsx watch index.ts",
-    "start": "node dist/index.js"
+    "start": "node dist/index.js",
+    "worker":"tsx watch worker.ts"
   },
   "dependencies": {
     "@prisma/adapter-pg": "^7.10.1",
