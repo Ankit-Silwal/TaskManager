@@ -1,0 +1,11 @@
+global:
+  scrape_intervals: 5s
+
+  scrape_intervals:
+    -job_name: backend
+    dns_sd_configs:
+      -name: ["backend"]
+      type: A
+      port: 8000
+      refresh_intervals: 10s
+      

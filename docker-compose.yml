@@ -68,6 +68,15 @@ services:
       migrate:
         condition: service_completed_successfully
     restart: unless-stopped
+  prometheus:
+    image: prom/prometheus:v3.1.0
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - promdata:/prometheus
+    depends_on:
+      - backend
 
   nginx:
     image: nginx:1.27
@@ -92,3 +101,4 @@ services:
 
 volumes:
   pgdata:
+  promdata:
