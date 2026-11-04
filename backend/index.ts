@@ -4,6 +4,7 @@ import app from "./app.js";
 import { connectRedis } from "./src/config/redis.js";
 import {redis} from "./src/config/redis.js"
 import {prisma} from "./src/config/prisma.js"
+import { lifecycle } from "./src/config/lifecycle.js";
 
 const port=process.env.PORT||8000;
 connectRedis();
@@ -15,10 +16,10 @@ const server=app.listen(port,()=>{
 server.keepAliveTimeout=65000;
 server.headersTimeout=66000;
 
-let shuttingDown=false;
 function shutdown(signal:string){
-  if(shuttingDown) return;
-  shuttingDown=true;
+  if(lifecycle.shuttingDown) return;
+  // also makes /health answer 503 from now on
+  lifecycle.shuttingDown=true;
   console.log(`${signal} received,shutting down`);
   setTimeout(()=>{
     console.error("Shutdown took too long,forcing exit")
