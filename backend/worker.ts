@@ -1,7 +1,6 @@
 import "dotenv/config"
 import {prisma} from "./src/config/prisma.js"
 import {cleanUpExpiredSession} from "./src/jobs/cleanUpSessions.js";
-import { sign } from "node:crypto";
 const INTERVAL_MS=Number(process.env.CLEANUP_INTERVAL??10*60*1000);
 let running=false;
 let stopping=false;
@@ -25,7 +24,7 @@ const timer=setInterval(runCleanUp,INTERVAL_MS);
 async function shutdown(signal:string){
   if(stopping) return;
   stopping=true;
-  console.log(`${sign} received,worker stopping`)
+  console.log(`${signal} received,worker stopping`)
   clearInterval(timer);
   const deadline=Date.now()+8000;
   while(running && Date.now()<deadline){

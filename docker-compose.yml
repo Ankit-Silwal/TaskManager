@@ -57,7 +57,17 @@ services:
       timeout: 3s
       retries: 3
       start_period: 10s
-
+  worker:
+    build: ./backend
+    command: ["node","dist/worker.js"]
+    env_file: ./backend/.env
+    environment:
+      DATABASE_URL: postgresql://app:app@postgres:5432/taskmanager
+      CLEANUP_INTERVAL: 600000
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+      restart: unless-stopped
   nginx:
     image: nginx:1.27
     ports:
