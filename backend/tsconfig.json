@@ -2,8 +2,9 @@
   // Visit https://aka.ms/tsconfig to read more about this file
   "compilerOptions": {
     // File Layout
-    // "rootDir": "./src",
-    // "outDir": "./dist",
+    // index.ts, app.ts and routes.ts live next to src/, so the root is "." (not "./src")
+    "rootDir": ".",
+    "outDir": "./dist",
 
     // Environment Settings
     // See also https://aka.ms/tsconfig/module
@@ -40,5 +41,7 @@
     "noUncheckedSideEffectImports": true,
     "moduleDetection": "force",
     "skipLibCheck": true,
-  }
+  },
+  // Only the app goes into dist/. test/ and prisma7.config.ts are left out.
+  "include": ["index.ts", "app.ts", "routes.ts", "src/**/*.ts"]
 }

@@ -26,6 +26,7 @@ function shutdown(signal:string){
   },8000).unref()
   server.close(async(err)=>{
     await prisma.$disconnect().catch(()=>{})
+    if(redis?.isOpen) await redis.quit().catch(()=>{})
     process.exit(err?1:0);
   })
   server.closeIdleConnections();
