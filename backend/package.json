@@ -7,9 +7,9 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
+    "build":"tsc",
     "dev": "tsx watch index.ts",
-    "start": "tsx index.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node dist/index.js"
   },
   "dependencies": {
     "@prisma/adapter-pg": "^7.10.1",
