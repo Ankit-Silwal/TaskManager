@@ -2,9 +2,11 @@ import express from "express"
 import cors from "cors";
 import cookieparser from "cookie-parser";
 import { setUpRoutes } from "./routes.js";
+import { metricsMiddleware } from "./src/metrics/metrics.js";
 import os from "os"
 const app=express();
 app.set("trust proxy",Number(process.env.TRUST_PROXY??0));
+app.use(metricsMiddleware)
 app.use((req,res,next)=>{
   res.setHeader("X-Instance",os.hostname())
   next();

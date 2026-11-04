@@ -1,5 +1,5 @@
 import {redis} from "../config/redis.js"
-
+import { cacheLookups } from "../metrics/metrics.js";
 const TTL_SECONDS=60;
 // Kill switch: TASK_CACHE=off turns the cache off without a code change (used to load test with and without it).
 const CACHE_ENABLED=process.env.TASK_CACHE!=="off"
@@ -19,6 +19,7 @@ export async function getCached<T>(userId:string,field:string):Promise<T|null> {
   if(!client) return null;
   try{
     const json=await client.hGet(userKey(userId),field)
+    cacheLookups.inc({result:json?"hit":"miss"})
     return json?JSON.parse(json) as T:null
   }catch(err){
     console.error("Cache read failed",err);

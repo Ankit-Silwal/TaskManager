@@ -6,7 +6,7 @@ import {redis} from "./src/config/redis.js"
 import {prisma} from "./src/config/prisma.js"
 import { lifecycle } from "./src/config/lifecycle.js";
 
-const port=process.env.PORT||8000;
+const port=process.env.PORT||6969;
 connectRedis();
 const server=app.listen(port,()=>{
   console.log(`The server is running at port no ${port}`)
