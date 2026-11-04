@@ -287,6 +287,48 @@ Throughput was the same (~2,850 req/s with p95 125 ms). The fix is about correct
 - The `counts` endpoint and "load more" pages were not part of the k6 mix.
 - One run per setup, so differences of about 10% (Test 4 vs 5a) are noise.
 
+## Test 6: background worker deletes dead login sessions (2026-11-05)
+
+**Why:** every login and refresh adds a row to `refresh_sessions`, and nothing removed rows after they expired, so the table would grow forever. The cleanup runs in a **separate `worker` service** (same image, `command: node dist/worker.js`), not inside the backend. With `--scale backend=4`, a timer in the backend would run the same delete 4 times. The worker stays at 1 copy.
+
+**How it works:** every `CLEANUP_INTERVAL` (600000 ms = 10 min) and once at start, the worker deletes rows where `expiredAt < now` **or** `revokedAt IS NOT NULL`, in **batches of 1000** (raw SQL `DELETE ... WHERE id IN (SELECT ... LIMIT 1000)`). It loops until a batch comes back smaller than 1000. Small batches keep each delete short, so live logins aren't blocked.
+
+### Setup
+
+`docker compose up -d --build --scale backend=4` → 4 backends + **1** worker. I inserted fake sessions directly with SQL:
+
+| Kind | Rows | Should be deleted? |
+|---|---|---|
+| expired (`expiredAt` = yesterday) | 5,500 | yes |
+| revoked (`revokedAt` set, not expired yet) | 300 | yes |
+| valid (expires in 7 days) | 200 | **no** |
+
+Then `docker compose stop worker` + `start worker` (the worker runs the cleanup once when it starts).
+
+### Results
+
+| Check | Result |
+|---|---|
+| Containers after `--scale backend=4` | 4 backends, **1** worker ✅ |
+| Worker log | `cleanup:delted 5800 session in 113 ms` (6 batches) |
+| Left in the table | expired **0**, revoked **0**, valid **200** ✅ |
+| `docker compose stop worker` | `SIGTERM received,worker stopping`, **exit code 0** in 609 ms (graceful) ✅ |
+| `/health` through nginx | `{"status":"ok","database":"ok","redis":"ok"}`, backends unaffected ✅ |
+
+The 200 valid test rows were deleted by hand afterwards.
+
+### What Test 6 tells us
+
+- **Jobs and requests are different work.** Backends can scale up and down freely. The worker is one process, so the job runs exactly once.
+- **The delete is selective**: only dead sessions go, and valid logins survive.
+- **It's fast**: 5,800 rows in about 0.1 s, helped by the existing `@@index([expiredAt])`.
+
+### Limits of Test 6
+
+- Not run under load. A big cleanup during heavy traffic wasn't measured.
+- There's only one worker. If someone runs `--scale worker=2`, both would delete (harmless, since deleting the same row twice doesn't break anything, but it's wasted work). A Redis lock or a job queue (BullMQ) would prevent that.
+- If the worker is down, nothing breaks right away. Rows just pile up until it comes back (`restart: unless-stopped` restarts it after a crash).
+
 ## Limits of this test (read before trusting the numbers)
 
 - **k6, the server and Postgres shared one machine**, so they competed for CPU. Real capacity on separate machines is likely higher, but network latency would add to every request.
