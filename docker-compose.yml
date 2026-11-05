@@ -77,7 +77,17 @@ services:
       - promdata:/prometheus
     depends_on:
       - backend
-
+  grafana:
+    image: grafana/grafana:11.4.0
+    ports:
+      - "3001:3000"
+    environment:
+      GF_SECURITY_ADMIN_PASSWORD: admin
+    volumes:
+      - ./grafana/provisioning:/etc/grafana/provisioning:ro
+      - grafanadata:/var/lib/grafana
+    depends_on:
+      - prometheus
   nginx:
     image: nginx:1.27
     ports:
@@ -102,3 +112,4 @@ services:
 volumes:
   pgdata:
   promdata:
+  grafanadata:
