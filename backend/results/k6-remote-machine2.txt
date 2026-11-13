@@ -1,0 +1,1271 @@
+
+         /\      Grafana   /‾‾/  
+    /\  /  \     |\  __   /  /   
+   /  \/    \    | |/ /  /   ‾‾\ 
+  /          \   |   (  |  (‾)  |
+ / __________ \  |_|\_\  \_____/ 
+
+     execution: local
+        script: load.js
+        output: -
+
+     scenarios: (100.00%) 1 scenario, 3000 max VUs, 3m50s max duration (incl. graceful stop):
+              * stress: Up to 5000.00 iterations/s for 3m20s over 10 stages (maxVUs: 500-3000, gracefulStop: 30s)
+
+
+running (0m00.8s), 0271/0500 VUs, 122 complete and 0 interrupted iterations
+stress   [   0% ] 0271/0500 VUs  0m00.8s/3m20s  0537.91 iters/s
+
+running (0m01.8s), 0562/0562 VUs, 274 complete and 0 interrupted iterations
+stress   [   1% ] 0562/0562 VUs  0m01.8s/3m20s  0588.00 iters/s
+
+running (0m02.8s), 0730/0730 VUs, 410 complete and 0 interrupted iterations
+stress   [   1% ] 0730/0730 VUs  0m02.8s/3m20s  0637.93 iters/s
+
+running (0m03.8s), 0914/0914 VUs, 502 complete and 0 interrupted iterations
+stress   [   2% ] 0914/0914 VUs  0m03.8s/3m20s  0688.00 iters/s
+
+running (0m04.8s), 1119/1119 VUs, 598 complete and 0 interrupted iterations
+stress   [   2% ] 1119/1119 VUs  0m04.8s/3m20s  0738.00 iters/s
+
+running (0m05.8s), 1337/1337 VUs, 648 complete and 0 interrupted iterations
+stress   [   3% ] 1337/1337 VUs  0m05.8s/3m20s  0788.00 iters/s
+
+running (0m06.8s), 1579/1580 VUs, 743 complete and 0 interrupted iterations
+stress   [   3% ] 1579/1580 VUs  0m06.8s/3m20s  0838.00 iters/s
+
+running (0m07.8s), 1825/1825 VUs, 798 complete and 0 interrupted iterations
+stress   [   4% ] 1825/1825 VUs  0m07.8s/3m20s  0888.00 iters/s
+
+running (0m08.8s), 2069/2069 VUs, 968 complete and 0 interrupted iterations
+stress   [   4% ] 2069/2069 VUs  0m08.8s/3m20s  0937.95 iters/s
+
+running (0m09.8s), 2349/2350 VUs, 1035 complete and 0 interrupted iterations
+stress   [   5% ] 2349/2350 VUs  0m09.8s/3m20s  0987.95 iters/s
+
+running (0m10.8s), 2615/2615 VUs, 1066 complete and 0 interrupted iterations
+stress   [   5% ] 2615/2615 VUs  0m10.8s/3m20s  1000.00 iters/s
+
+running (0m11.8s), 2907/2908 VUs, 1177 complete and 0 interrupted iterations
+stress   [   6% ] 2907/2908 VUs  0m11.8s/3m20s  1000.00 iters/s
+time="2026-11-14T00:34:20+05:30" level=warning msg="Insufficient VUs, reached 3000 active VUs and cannot initialize more" executor=ramping-arrival-rate scenario=stress
+
+running (0m12.8s), 3000/3000 VUs, 1249 complete and 0 interrupted iterations
+stress   [   6% ] 3000/3000 VUs  0m12.8s/3m20s  1000.00 iters/s
+
+running (0m13.8s), 3000/3000 VUs, 1362 complete and 0 interrupted iterations
+stress   [   7% ] 3000/3000 VUs  0m13.8s/3m20s  1000.00 iters/s
+
+running (0m14.8s), 3000/3000 VUs, 1431 complete and 0 interrupted iterations
+stress   [   7% ] 3000/3000 VUs  0m14.8s/3m20s  1000.00 iters/s
+
+running (0m15.8s), 3000/3000 VUs, 1461 complete and 0 interrupted iterations
+stress   [   8% ] 3000/3000 VUs  0m15.8s/3m20s  1000.00 iters/s
+
+running (0m16.8s), 3000/3000 VUs, 1610 complete and 0 interrupted iterations
+stress   [   8% ] 3000/3000 VUs  0m16.8s/3m20s  1000.00 iters/s
+
+running (0m17.8s), 3000/3000 VUs, 1737 complete and 0 interrupted iterations
+stress   [   9% ] 3000/3000 VUs  0m17.8s/3m20s  1000.00 iters/s
+
+running (0m18.8s), 2999/3000 VUs, 1888 complete and 0 interrupted iterations
+stress   [   9% ] 2999/3000 VUs  0m18.8s/3m20s  1000.00 iters/s
+
+running (0m19.8s), 3000/3000 VUs, 2009 complete and 0 interrupted iterations
+stress   [  10% ] 3000/3000 VUs  0m19.8s/3m20s  1000.00 iters/s
+
+running (0m20.8s), 3000/3000 VUs, 2151 complete and 0 interrupted iterations
+stress   [  10% ] 3000/3000 VUs  0m20.8s/3m20s  1000.00 iters/s
+
+running (0m21.8s), 3000/3000 VUs, 2289 complete and 0 interrupted iterations
+stress   [  11% ] 3000/3000 VUs  0m21.8s/3m20s  1000.00 iters/s
+
+running (0m22.8s), 3000/3000 VUs, 2385 complete and 0 interrupted iterations
+stress   [  11% ] 3000/3000 VUs  0m22.8s/3m20s  1000.00 iters/s
+
+running (0m23.8s), 2999/3000 VUs, 2530 complete and 0 interrupted iterations
+stress   [  12% ] 2999/3000 VUs  0m23.8s/3m20s  1000.00 iters/s
+
+running (0m24.8s), 2992/3000 VUs, 2711 complete and 0 interrupted iterations
+stress   [  12% ] 2992/3000 VUs  0m24.8s/3m20s  1000.00 iters/s
+
+running (0m25.8s), 3000/3000 VUs, 2879 complete and 0 interrupted iterations
+stress   [  13% ] 3000/3000 VUs  0m25.8s/3m20s  1000.00 iters/s
+time="2026-11-14T00:34:34+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": read tcp 10.180.55.197:38514->10.180.22.73:8000: read: connection reset by peer"
+
+running (0m26.8s), 3000/3000 VUs, 3056 complete and 0 interrupted iterations
+stress   [  13% ] 3000/3000 VUs  0m26.8s/3m20s  1000.00 iters/s
+
+running (0m27.8s), 3000/3000 VUs, 3163 complete and 0 interrupted iterations
+stress   [  14% ] 3000/3000 VUs  0m27.8s/3m20s  1000.00 iters/s
+time="2026-11-14T00:34:36+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": read tcp 10.180.55.197:39088->10.180.22.73:8000: read: connection reset by peer"
+
+running (0m28.8s), 2998/3000 VUs, 3274 complete and 0 interrupted iterations
+stress   [  14% ] 2998/3000 VUs  0m28.8s/3m20s  1000.00 iters/s
+time="2026-11-14T00:34:37+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": read tcp 10.180.55.197:51994->10.180.22.73:8000: read: connection reset by peer"
+time="2026-11-14T00:34:38+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": read tcp 10.180.55.197:43040->10.180.22.73:8000: read: connection reset by peer"
+
+running (0m29.8s), 2999/3000 VUs, 3488 complete and 0 interrupted iterations
+stress   [  15% ] 2999/3000 VUs  0m29.8s/3m20s  1000.00 iters/s
+time="2026-11-14T00:34:39+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+
+running (0m30.8s), 3000/3000 VUs, 3673 complete and 0 interrupted iterations
+stress   [  15% ] 3000/3000 VUs  0m30.8s/3m20s  1000.00 iters/s
+time="2026-11-14T00:34:40+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+
+running (0m31.8s), 3000/3000 VUs, 3842 complete and 0 interrupted iterations
+stress   [  16% ] 3000/3000 VUs  0m31.8s/3m20s  1000.00 iters/s
+time="2026-11-14T00:34:40+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:40+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:40+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:41+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:41+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+
+running (0m32.8s), 3000/3000 VUs, 4060 complete and 0 interrupted iterations
+stress   [  16% ] 3000/3000 VUs  0m32.8s/3m20s  1000.00 iters/s
+time="2026-11-14T00:34:41+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:41+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:41+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:41+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:41+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:42+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:42+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:42+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:42+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:42+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+
+running (0m33.8s), 3000/3000 VUs, 4240 complete and 0 interrupted iterations
+stress   [  17% ] 3000/3000 VUs  0m33.8s/3m20s  1000.00 iters/s
+time="2026-11-14T00:34:42+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:42+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:42+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:42+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:42+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:42+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:43+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": read tcp 10.180.55.197:57470->10.180.22.73:8000: read: connection reset by peer"
+time="2026-11-14T00:34:43+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:43+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:43+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": read tcp 10.180.55.197:54258->10.180.22.73:8000: read: connection reset by peer"
+time="2026-11-14T00:34:43+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:43+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+
+running (0m34.8s), 3000/3000 VUs, 4449 complete and 0 interrupted iterations
+stress   [  17% ] 3000/3000 VUs  0m34.8s/3m20s  1000.00 iters/s
+time="2026-11-14T00:34:43+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": read tcp 10.180.55.197:39766->10.180.22.73:8000: read: connection reset by peer"
+time="2026-11-14T00:34:43+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:43+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:43+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:43+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": read tcp 10.180.55.197:34974->10.180.22.73:8000: read: connection reset by peer"
+time="2026-11-14T00:34:43+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:43+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:44+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:44+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": read tcp 10.180.55.197:54238->10.180.22.73:8000: read: connection reset by peer"
+time="2026-11-14T00:34:44+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:44+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:44+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:44+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+
+running (0m35.8s), 3000/3000 VUs, 4644 complete and 0 interrupted iterations
+stress   [  18% ] 3000/3000 VUs  0m35.8s/3m20s  1000.00 iters/s
+time="2026-11-14T00:34:44+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:44+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:44+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:44+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:44+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:44+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:45+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:45+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:45+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:45+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:45+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:45+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:45+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:45+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:45+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:45+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:45+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+
+running (0m36.8s), 3000/3000 VUs, 4835 complete and 0 interrupted iterations
+stress   [  18% ] 3000/3000 VUs  0m36.8s/3m20s  1000.00 iters/s
+time="2026-11-14T00:34:45+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:45+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:45+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:45+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:45+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:45+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:45+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:45+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": read tcp 10.180.55.197:34342->10.180.22.73:8000: read: connection reset by peer"
+time="2026-11-14T00:34:46+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": read tcp 10.180.55.197:53684->10.180.22.73:8000: read: connection reset by peer"
+time="2026-11-14T00:34:46+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": read tcp 10.180.55.197:39648->10.180.22.73:8000: read: connection reset by peer"
+time="2026-11-14T00:34:46+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:46+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:46+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:46+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:46+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:46+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:46+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:46+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+
+running (0m37.8s), 3000/3000 VUs, 5000 complete and 0 interrupted iterations
+stress   [  19% ] 3000/3000 VUs  0m37.8s/3m20s  1000.00 iters/s
+time="2026-11-14T00:34:46+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:46+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:46+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": read tcp 10.180.55.197:51826->10.180.22.73:8000: read: connection reset by peer"
+time="2026-11-14T00:34:46+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": read tcp 10.180.55.197:51592->10.180.22.73:8000: read: connection reset by peer"
+time="2026-11-14T00:34:46+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:46+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:46+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:46+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:46+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:46+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:47+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:47+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:47+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:47+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": read tcp 10.180.55.197:51372->10.180.22.73:8000: read: connection reset by peer"
+time="2026-11-14T00:34:47+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:47+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:47+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:47+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+
+running (0m38.8s), 3000/3000 VUs, 5195 complete and 0 interrupted iterations
+stress   [  19% ] 3000/3000 VUs  0m38.8s/3m20s  1000.00 iters/s
+time="2026-11-14T00:34:47+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:47+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:47+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": read tcp 10.180.55.197:37860->10.180.22.73:8000: read: connection reset by peer"
+time="2026-11-14T00:34:47+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:47+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:47+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:47+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:47+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:47+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:47+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:48+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": read tcp 10.180.55.197:60032->10.180.22.73:8000: read: connection reset by peer"
+time="2026-11-14T00:34:48+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:48+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:48+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:48+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:48+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:48+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:48+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": read tcp 10.180.55.197:40240->10.180.22.73:8000: read: connection reset by peer"
+time="2026-11-14T00:34:48+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:48+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:48+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:48+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:48+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:48+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:48+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:48+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:48+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:48+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": read tcp 10.180.55.197:36674->10.180.22.73:8000: read: connection reset by peer"
+time="2026-11-14T00:34:48+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": read tcp 10.180.55.197:56684->10.180.22.73:8000: read: connection reset by peer"
+
+running (0m39.8s), 3000/3000 VUs, 5434 complete and 0 interrupted iterations
+stress   [  20% ] 3000/3000 VUs  0m39.8s/3m20s  1000.00 iters/s
+time="2026-11-14T00:34:48+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:48+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:48+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:48+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:49+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:49+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:49+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:49+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:49+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:49+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:49+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:49+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:49+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:49+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:49+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:49+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:49+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:49+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+
+running (0m40.8s), 3000/3000 VUs, 5680 complete and 0 interrupted iterations
+stress   [  20% ] 3000/3000 VUs  0m40.8s/3m20s  1076.06 iters/s
+time="2026-11-14T00:34:49+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:49+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:49+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:49+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": read tcp 10.180.55.197:60704->10.180.22.73:8000: read: connection reset by peer"
+time="2026-11-14T00:34:49+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:50+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:50+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:50+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:50+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:50+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:50+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:50+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:50+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:50+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:50+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+
+running (0m41.8s), 3000/3000 VUs, 5923 complete and 0 interrupted iterations
+stress   [  21% ] 3000/3000 VUs  0m41.8s/3m20s  1175.97 iters/s
+time="2026-11-14T00:34:50+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:50+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:50+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:50+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:50+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:50+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:50+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:50+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:50+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:50+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:50+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:50+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:50+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:50+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:50+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:50+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:50+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:50+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:34:51+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": read tcp 10.180.55.197:36190->10.180.22.73:8000: read: connection reset by peer"
+
+running (0m42.8s), 2999/3000 VUs, 6178 complete and 0 interrupted iterations
+stress   [  21% ] 2999/3000 VUs  0m42.8s/3m20s  1275.97 iters/s
+time="2026-11-14T00:34:52+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": read tcp 10.180.55.197:56166->10.180.22.73:8000: read: connection reset by peer"
+
+running (0m43.8s), 3000/3000 VUs, 6414 complete and 0 interrupted iterations
+stress   [  22% ] 3000/3000 VUs  0m43.8s/3m20s  1375.97 iters/s
+time="2026-11-14T00:34:52+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": read tcp 10.180.55.197:53546->10.180.22.73:8000: read: connection reset by peer"
+time="2026-11-14T00:34:53+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": read tcp 10.180.55.197:43242->10.180.22.73:8000: read: connection reset by peer"
+time="2026-11-14T00:34:53+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": read tcp 10.180.55.197:59700->10.180.22.73:8000: read: connection reset by peer"
+
+running (0m44.8s), 3000/3000 VUs, 6602 complete and 0 interrupted iterations
+stress   [  22% ] 3000/3000 VUs  0m44.8s/3m20s  1476.04 iters/s
+
+running (0m45.8s), 3000/3000 VUs, 6759 complete and 0 interrupted iterations
+stress   [  23% ] 3000/3000 VUs  0m45.8s/3m20s  1576.04 iters/s
+
+running (0m46.8s), 3000/3000 VUs, 6880 complete and 0 interrupted iterations
+stress   [  23% ] 3000/3000 VUs  0m46.8s/3m20s  1675.86 iters/s
+time="2026-11-14T00:34:55+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": read tcp 10.180.55.197:38418->10.180.22.73:8000: read: connection reset by peer"
+time="2026-11-14T00:34:56+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": read tcp 10.180.55.197:37096->10.180.22.73:8000: read: connection reset by peer"
+time="2026-11-14T00:34:56+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": read tcp 10.180.55.197:53834->10.180.22.73:8000: read: connection reset by peer"
+time="2026-11-14T00:34:56+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": read tcp 10.180.55.197:52378->10.180.22.73:8000: read: connection reset by peer"
+
+running (0m47.8s), 3000/3000 VUs, 7044 complete and 0 interrupted iterations
+stress   [  24% ] 3000/3000 VUs  0m47.8s/3m20s  1776.03 iters/s
+time="2026-11-14T00:34:56+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": read tcp 10.180.55.197:35796->10.180.22.73:8000: read: connection reset by peer"
+
+running (0m48.8s), 3000/3000 VUs, 7126 complete and 0 interrupted iterations
+stress   [  24% ] 3000/3000 VUs  0m48.8s/3m20s  1875.93 iters/s
+time="2026-11-14T00:34:57+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": read tcp 10.180.55.197:55210->10.180.22.73:8000: read: connection reset by peer"
+time="2026-11-14T00:34:57+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": read tcp 10.180.55.197:33976->10.180.22.73:8000: read: connection reset by peer"
+time="2026-11-14T00:34:57+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": read tcp 10.180.55.197:57726->10.180.22.73:8000: read: connection reset by peer"
+time="2026-11-14T00:34:57+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": read tcp 10.180.55.197:59092->10.180.22.73:8000: read: connection reset by peer"
+
+running (0m49.8s), 3000/3000 VUs, 7213 complete and 0 interrupted iterations
+stress   [  25% ] 3000/3000 VUs  0m49.8s/3m20s  1976.08 iters/s
+
+running (0m50.8s), 3000/3000 VUs, 7257 complete and 0 interrupted iterations
+stress   [  25% ] 3000/3000 VUs  0m50.8s/3m20s  2000.00 iters/s
+time="2026-11-14T00:34:59+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": read tcp 10.180.55.197:37188->10.180.22.73:8000: read: connection reset by peer"
+
+running (0m51.8s), 3000/3000 VUs, 7298 complete and 0 interrupted iterations
+stress   [  26% ] 3000/3000 VUs  0m51.8s/3m20s  2000.00 iters/s
+time="2026-11-14T00:35:00+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": read tcp 10.180.55.197:57356->10.180.22.73:8000: read: connection reset by peer"
+
+running (0m52.8s), 3000/3000 VUs, 7354 complete and 0 interrupted iterations
+stress   [  26% ] 3000/3000 VUs  0m52.8s/3m20s  2000.00 iters/s
+time="2026-11-14T00:35:01+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": read tcp 10.180.55.197:37826->10.180.22.73:8000: read: connection reset by peer"
+
+running (0m53.8s), 3000/3000 VUs, 7411 complete and 0 interrupted iterations
+stress   [  27% ] 3000/3000 VUs  0m53.8s/3m20s  2000.00 iters/s
+time="2026-11-14T00:35:02+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": read tcp 10.180.55.197:38006->10.180.22.73:8000: read: connection reset by peer"
+
+running (0m54.8s), 3000/3000 VUs, 7462 complete and 0 interrupted iterations
+stress   [  27% ] 3000/3000 VUs  0m54.8s/3m20s  2000.00 iters/s
+
+running (0m55.8s), 3000/3000 VUs, 7465 complete and 0 interrupted iterations
+stress   [  28% ] 3000/3000 VUs  0m55.8s/3m20s  2000.00 iters/s
+
+running (0m56.8s), 3000/3000 VUs, 7465 complete and 0 interrupted iterations
+stress   [  28% ] 3000/3000 VUs  0m56.8s/3m20s  2000.00 iters/s
+
+running (0m57.8s), 3000/3000 VUs, 7482 complete and 0 interrupted iterations
+stress   [  29% ] 3000/3000 VUs  0m57.8s/3m20s  2000.00 iters/s
+time="2026-11-14T00:35:06+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+
+running (0m58.8s), 3000/3000 VUs, 7491 complete and 0 interrupted iterations
+stress   [  29% ] 3000/3000 VUs  0m58.8s/3m20s  2000.00 iters/s
+time="2026-11-14T00:35:07+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+
+running (0m59.8s), 3000/3000 VUs, 7492 complete and 0 interrupted iterations
+stress   [  30% ] 3000/3000 VUs  0m59.8s/3m20s  2000.00 iters/s
+time="2026-11-14T00:35:09+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+
+running (1m00.8s), 3000/3000 VUs, 7493 complete and 0 interrupted iterations
+stress   [  30% ] 3000/3000 VUs  1m00.8s/3m20s  2000.00 iters/s
+time="2026-11-14T00:35:10+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+
+running (1m01.8s), 3000/3000 VUs, 7494 complete and 0 interrupted iterations
+stress   [  31% ] 3000/3000 VUs  1m01.8s/3m20s  2000.00 iters/s
+time="2026-11-14T00:35:10+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:10+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:10+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:35:11+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:11+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:35:11+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:11+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:11+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:11+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": request timeout"
+
+running (1m02.8s), 3000/3000 VUs, 7503 complete and 0 interrupted iterations
+stress   [  31% ] 3000/3000 VUs  1m02.8s/3m20s  2000.00 iters/s
+time="2026-11-14T00:35:11+05:30" level=warning msg="Request Failed" error="request timeout"
+time="2026-11-14T00:35:11+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:11+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:11+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:11+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:11+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:11+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:35:11+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:12+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:12+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:12+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:12+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": read tcp 10.180.55.197:56310->10.180.22.73:8000: read: connection reset by peer"
+time="2026-11-14T00:35:12+05:30" level=warning msg="Request Failed" error="request timeout"
+
+running (1m03.8s), 3000/3000 VUs, 7547 complete and 0 interrupted iterations
+stress   [  32% ] 3000/3000 VUs  1m03.8s/3m20s  2000.00 iters/s
+time="2026-11-14T00:35:12+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:12+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:12+05:30" level=warning msg="Request Failed" error="request timeout"
+time="2026-11-14T00:35:12+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:12+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:35:12+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:12+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:12+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:12+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:12+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:12+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:13+05:30" level=warning msg="Request Failed" error="request timeout"
+time="2026-11-14T00:35:13+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:13+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:35:13+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:13+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:13+05:30" level=warning msg="Request Failed" error="request timeout"
+time="2026-11-14T00:35:13+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+
+running (1m04.8s), 3000/3000 VUs, 7644 complete and 0 interrupted iterations
+stress   [  32% ] 3000/3000 VUs  1m04.8s/3m20s  2000.00 iters/s
+time="2026-11-14T00:35:13+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:13+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:13+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:13+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:14+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:14+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:14+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:14+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:14+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:14+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:14+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": read tcp 10.180.55.197:55160->10.180.22.73:8000: read: connection reset by peer"
+time="2026-11-14T00:35:14+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": read tcp 10.180.55.197:55364->10.180.22.73:8000: read: connection reset by peer"
+time="2026-11-14T00:35:14+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": read tcp 10.180.55.197:54842->10.180.22.73:8000: read: connection reset by peer"
+time="2026-11-14T00:35:14+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:14+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+
+running (1m05.8s), 3000/3000 VUs, 7737 complete and 0 interrupted iterations
+stress   [  33% ] 3000/3000 VUs  1m05.8s/3m20s  2000.00 iters/s
+time="2026-11-14T00:35:14+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:35:14+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:14+05:30" level=warning msg="Request Failed" error="request timeout"
+time="2026-11-14T00:35:14+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:35:14+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:14+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:14+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:15+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:15+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": read tcp 10.180.55.197:55032->10.180.22.73:8000: read: connection reset by peer"
+time="2026-11-14T00:35:15+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:15+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:15+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:35:15+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:15+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:35:15+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:15+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": read tcp 10.180.55.197:55662->10.180.22.73:8000: read: connection reset by peer"
+time="2026-11-14T00:35:15+05:30" level=warning msg="Request Failed" error="request timeout"
+time="2026-11-14T00:35:15+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:15+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": request timeout"
+
+running (1m06.8s), 3000/3000 VUs, 7815 complete and 0 interrupted iterations
+stress   [  33% ] 3000/3000 VUs  1m06.8s/3m20s  2000.00 iters/s
+time="2026-11-14T00:35:15+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:35:15+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:15+05:30" level=warning msg="Request Failed" error="request timeout"
+time="2026-11-14T00:35:15+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:15+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:15+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:15+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": read tcp 10.180.55.197:55616->10.180.22.73:8000: read: connection reset by peer"
+time="2026-11-14T00:35:15+05:30" level=warning msg="Request Failed" error="request timeout"
+time="2026-11-14T00:35:15+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:15+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:16+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:16+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:16+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:16+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:16+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:16+05:30" level=warning msg="Request Failed" error="request timeout"
+time="2026-11-14T00:35:16+05:30" level=warning msg="Request Failed" error="request timeout"
+time="2026-11-14T00:35:16+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:16+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:16+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:16+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:16+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+
+running (1m07.8s), 3000/3000 VUs, 7906 complete and 0 interrupted iterations
+stress   [  34% ] 3000/3000 VUs  1m07.8s/3m20s  2000.00 iters/s
+time="2026-11-14T00:35:16+05:30" level=warning msg="Request Failed" error="request timeout"
+time="2026-11-14T00:35:16+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:16+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:16+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:16+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:16+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:16+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:16+05:30" level=warning msg="Request Failed" error="request timeout"
+time="2026-11-14T00:35:16+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:16+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:17+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:17+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:17+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:17+05:30" level=warning msg="Request Failed" error="request timeout"
+time="2026-11-14T00:35:17+05:30" level=warning msg="Request Failed" error="request timeout"
+time="2026-11-14T00:35:17+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:17+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:17+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:35:17+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:17+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:17+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:17+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:17+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:17+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+
+running (1m08.8s), 3000/3000 VUs, 8015 complete and 0 interrupted iterations
+stress   [  34% ] 3000/3000 VUs  1m08.8s/3m20s  2000.00 iters/s
+time="2026-11-14T00:35:17+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:17+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": read tcp 10.180.55.197:55534->10.180.22.73:8000: read: connection reset by peer"
+time="2026-11-14T00:35:17+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:35:17+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:35:17+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:17+05:30" level=warning msg="Request Failed" error="request timeout"
+time="2026-11-14T00:35:17+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:17+05:30" level=warning msg="Request Failed" error="request timeout"
+time="2026-11-14T00:35:17+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:17+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:18+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:18+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:35:18+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:18+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:35:18+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:18+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:18+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:18+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:18+05:30" level=warning msg="Request Failed" error="request timeout"
+time="2026-11-14T00:35:18+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:18+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:18+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:18+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:18+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:35:18+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+
+running (1m09.8s), 3000/3000 VUs, 8115 complete and 0 interrupted iterations
+stress   [  35% ] 3000/3000 VUs  1m09.8s/3m20s  2000.00 iters/s
+time="2026-11-14T00:35:18+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:35:18+05:30" level=warning msg="Request Failed" error="request timeout"
+time="2026-11-14T00:35:18+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:19+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:19+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:19+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:19+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:19+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:19+05:30" level=warning msg="Request Failed" error="request timeout"
+time="2026-11-14T00:35:19+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:19+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:35:19+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:19+05:30" level=warning msg="Request Failed" error="request timeout"
+time="2026-11-14T00:35:19+05:30" level=warning msg="Request Failed" error="request timeout"
+time="2026-11-14T00:35:19+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:19+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:19+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:19+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:19+05:30" level=warning msg="Request Failed" error="request timeout"
+time="2026-11-14T00:35:19+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:19+05:30" level=warning msg="Request Failed" error="request timeout"
+time="2026-11-14T00:35:19+05:30" level=warning msg="Request Failed" error="request timeout"
+time="2026-11-14T00:35:19+05:30" level=warning msg="Request Failed" error="request timeout"
+time="2026-11-14T00:35:19+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:35:19+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:19+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+
+running (1m10.8s), 3000/3000 VUs, 8142 complete and 0 interrupted iterations
+stress   [  35% ] 3000/3000 VUs  1m10.8s/3m20s  2000.00 iters/s
+time="2026-11-14T00:35:19+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:19+05:30" level=warning msg="Request Failed" error="request timeout"
+time="2026-11-14T00:35:19+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:19+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:19+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:19+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:19+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:19+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:19+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:19+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:19+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:19+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:19+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:20+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:20+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:20+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:20+05:30" level=warning msg="Request Failed" error="request timeout"
+time="2026-11-14T00:35:20+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:20+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:20+05:30" level=warning msg="Request Failed" error="request timeout"
+time="2026-11-14T00:35:20+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:20+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:35:20+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:20+05:30" level=warning msg="Request Failed" error="request timeout"
+time="2026-11-14T00:35:20+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:20+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:20+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:35:20+05:30" level=warning msg="Request Failed" error="request timeout"
+time="2026-11-14T00:35:20+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:20+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:20+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:20+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:20+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:20+05:30" level=warning msg="Request Failed" error="request timeout"
+
+running (1m11.8s), 3000/3000 VUs, 8257 complete and 0 interrupted iterations
+stress   [  36% ] 3000/3000 VUs  1m11.8s/3m20s  2000.00 iters/s
+time="2026-11-14T00:35:20+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:35:20+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:20+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:35:20+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:20+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:35:20+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:35:20+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:20+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:35:20+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:35:20+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:35:20+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:20+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:20+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:21+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:21+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+
+running (1m12.8s), 3000/3000 VUs, 8434 complete and 0 interrupted iterations
+stress   [  36% ] 3000/3000 VUs  1m12.8s/3m20s  2000.00 iters/s
+time="2026-11-14T00:35:21+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:21+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:21+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:22+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:22+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+
+running (1m13.8s), 3000/3000 VUs, 8617 complete and 0 interrupted iterations
+stress   [  37% ] 3000/3000 VUs  1m13.8s/3m20s  2000.00 iters/s
+time="2026-11-14T00:35:22+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:22+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:22+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:22+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:35:22+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:23+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+
+running (1m14.8s), 3000/3000 VUs, 8788 complete and 0 interrupted iterations
+stress   [  37% ] 3000/3000 VUs  1m14.8s/3m20s  2000.00 iters/s
+time="2026-11-14T00:35:24+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:24+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": read tcp 10.180.55.197:55118->10.180.22.73:8000: read: connection reset by peer"
+time="2026-11-14T00:35:24+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+
+running (1m15.8s), 3000/3000 VUs, 8826 complete and 0 interrupted iterations
+stress   [  38% ] 3000/3000 VUs  1m15.8s/3m20s  2000.00 iters/s
+time="2026-11-14T00:35:24+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": read tcp 10.180.55.197:44610->10.180.22.73:8000: read: connection reset by peer"
+time="2026-11-14T00:35:24+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:25+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:25+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:25+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+
+running (1m16.8s), 3000/3000 VUs, 8915 complete and 0 interrupted iterations
+stress   [  38% ] 3000/3000 VUs  1m16.8s/3m20s  2000.00 iters/s
+time="2026-11-14T00:35:25+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:35:25+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:25+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:25+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:25+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:25+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:25+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:25+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:25+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:26+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:26+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:26+05:30" level=warning msg="Request Failed" error="request timeout"
+time="2026-11-14T00:35:26+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:26+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:26+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:26+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:26+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+
+running (1m17.8s), 3000/3000 VUs, 9011 complete and 0 interrupted iterations
+stress   [  39% ] 3000/3000 VUs  1m17.8s/3m20s  2000.00 iters/s
+time="2026-11-14T00:35:26+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:26+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:26+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:35:26+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:26+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:26+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:27+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:27+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:27+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:27+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:27+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+
+running (1m18.8s), 3000/3000 VUs, 9033 complete and 0 interrupted iterations
+stress   [  39% ] 3000/3000 VUs  1m18.8s/3m20s  2000.00 iters/s
+time="2026-11-14T00:35:27+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:27+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:27+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:28+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:28+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:28+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:28+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:28+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:28+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+
+running (1m19.8s), 3000/3000 VUs, 9114 complete and 0 interrupted iterations
+stress   [  40% ] 3000/3000 VUs  1m19.8s/3m20s  2000.00 iters/s
+time="2026-11-14T00:35:28+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:28+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:28+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:28+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:29+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:29+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:29+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:29+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:29+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:29+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:29+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:29+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:29+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+
+running (1m20.8s), 3000/3000 VUs, 9275 complete and 0 interrupted iterations
+stress   [  40% ] 3000/3000 VUs  1m20.8s/3m20s  2075.98 iters/s
+time="2026-11-14T00:35:29+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:29+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:29+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:35:29+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:30+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:30+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": request timeout"
+
+running (1m21.8s), 3000/3000 VUs, 9443 complete and 0 interrupted iterations
+stress   [  41% ] 3000/3000 VUs  1m21.8s/3m20s  2175.94 iters/s
+time="2026-11-14T00:35:30+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:30+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:35:30+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:30+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:30+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:30+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": read tcp 10.180.55.197:55070->10.180.22.73:8000: read: connection reset by peer"
+time="2026-11-14T00:35:30+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": read tcp 10.180.55.197:55262->10.180.22.73:8000: read: connection reset by peer"
+time="2026-11-14T00:35:30+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": read tcp 10.180.55.197:55316->10.180.22.73:8000: read: connection reset by peer"
+time="2026-11-14T00:35:30+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:31+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:31+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:31+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:31+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:31+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+
+running (1m22.8s), 3000/3000 VUs, 9587 complete and 0 interrupted iterations
+stress   [  41% ] 3000/3000 VUs  1m22.8s/3m20s  2276.07 iters/s
+time="2026-11-14T00:35:31+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:31+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:31+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:31+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:31+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:31+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:31+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:32+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:32+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:32+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+
+running (1m23.8s), 3000/3000 VUs, 9793 complete and 0 interrupted iterations
+stress   [  42% ] 3000/3000 VUs  1m23.8s/3m20s  2376.02 iters/s
+time="2026-11-14T00:35:32+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:32+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:32+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:33+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:33+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:33+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:33+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:33+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:33+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:33+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:33+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:33+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+
+running (1m24.8s), 3000/3000 VUs, 9924 complete and 0 interrupted iterations
+stress   [  42% ] 3000/3000 VUs  1m24.8s/3m20s  2475.86 iters/s
+time="2026-11-14T00:35:33+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:33+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:33+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:33+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:34+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:34+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:34+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:34+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": read tcp 10.180.55.197:47018->10.180.22.73:8000: read: connection reset by peer"
+time="2026-11-14T00:35:34+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:34+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:34+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+
+running (1m25.8s), 3000/3000 VUs, 10073 complete and 0 interrupted iterations
+stress   [  43% ] 3000/3000 VUs  1m25.8s/3m20s  2575.99 iters/s
+time="2026-11-14T00:35:34+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:34+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:34+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:34+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:34+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:34+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:34+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:34+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:34+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:35+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:35+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:35+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:35+05:30" level=warning msg="Request Failed" error="request timeout"
+time="2026-11-14T00:35:35+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+
+running (1m26.8s), 3000/3000 VUs, 10305 complete and 0 interrupted iterations
+stress   [  43% ] 2999/3000 VUs  1m26.8s/3m20s  2675.95 iters/s
+time="2026-11-14T00:35:35+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:35+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:35+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:35+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": read tcp 10.180.55.197:44884->10.180.22.73:8000: read: connection reset by peer"
+time="2026-11-14T00:35:35+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": read tcp 10.180.55.197:47188->10.180.22.73:8000: read: connection reset by peer"
+time="2026-11-14T00:35:35+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": read tcp 10.180.55.197:47152->10.180.22.73:8000: read: connection reset by peer"
+time="2026-11-14T00:35:35+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:36+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:36+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:36+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:36+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:36+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+
+running (1m27.8s), 3000/3000 VUs, 10546 complete and 0 interrupted iterations
+stress   [  44% ] 3000/3000 VUs  1m27.8s/3m20s  2775.91 iters/s
+time="2026-11-14T00:35:36+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:36+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:36+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:36+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:37+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:37+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:37+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": read tcp 10.180.55.197:44996->10.180.22.73:8000: read: connection reset by peer"
+time="2026-11-14T00:35:37+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+
+running (1m28.8s), 3000/3000 VUs, 10777 complete and 0 interrupted iterations
+stress   [  44% ] 3000/3000 VUs  1m28.8s/3m20s  2876.02 iters/s
+time="2026-11-14T00:35:37+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:37+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:38+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:38+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:38+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+
+running (1m29.8s), 3000/3000 VUs, 11033 complete and 0 interrupted iterations
+stress   [  45% ] 3000/3000 VUs  1m29.8s/3m20s  2975.95 iters/s
+time="2026-11-14T00:35:38+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:38+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:38+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:38+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:38+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:38+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:38+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:38+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:39+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:39+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:39+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:39+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+
+running (1m30.8s), 3000/3000 VUs, 11275 complete and 0 interrupted iterations
+stress   [  45% ] 3000/3000 VUs  1m30.8s/3m20s  3000.00 iters/s
+time="2026-11-14T00:35:39+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:39+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:39+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:39+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:40+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:40+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:40+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:40+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:40+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": read tcp 10.180.55.197:44942->10.180.22.73:8000: read: connection reset by peer"
+time="2026-11-14T00:35:40+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+
+running (1m31.8s), 3000/3000 VUs, 11547 complete and 0 interrupted iterations
+stress   [  46% ] 3000/3000 VUs  1m31.8s/3m20s  2999.99 iters/s
+time="2026-11-14T00:35:40+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:40+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:40+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:40+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:40+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:40+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:41+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:41+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:41+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:41+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:35:41+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:41+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:41+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:41+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:41+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:41+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": request timeout"
+
+running (1m32.8s), 3000/3000 VUs, 11800 complete and 0 interrupted iterations
+stress   [  46% ] 3000/3000 VUs  1m32.8s/3m20s  2999.99 iters/s
+time="2026-11-14T00:35:41+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:41+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:41+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:41+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:41+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:41+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:42+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:42+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:42+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:42+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:42+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:42+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:42+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+
+running (1m33.8s), 3000/3000 VUs, 12093 complete and 0 interrupted iterations
+stress   [  47% ] 3000/3000 VUs  1m33.8s/3m20s  2999.99 iters/s
+time="2026-11-14T00:35:42+05:30" level=warning msg="Request Failed" error="request timeout"
+time="2026-11-14T00:35:42+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:42+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:42+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:42+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:42+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:42+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:42+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:42+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:42+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:35:43+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:43+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:43+05:30" level=warning msg="Request Failed" error="request timeout"
+time="2026-11-14T00:35:43+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:43+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:43+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:35:43+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+
+running (1m34.8s), 3000/3000 VUs, 12370 complete and 0 interrupted iterations
+stress   [  47% ] 3000/3000 VUs  1m34.8s/3m20s  3000.00 iters/s
+time="2026-11-14T00:35:43+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:43+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:43+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:44+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:35:44+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:44+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:44+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:44+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:44+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:44+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:44+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:44+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:35:44+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:44+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:35:44+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+
+running (1m35.8s), 3000/3000 VUs, 12632 complete and 0 interrupted iterations
+stress   [  48% ] 3000/3000 VUs  1m35.8s/3m20s  3000.00 iters/s
+time="2026-11-14T00:35:44+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:44+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:35:44+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:44+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:35:44+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:35:44+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:44+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:44+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:35:45+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:45+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:45+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:45+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:45+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:45+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:45+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:45+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:45+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:45+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+
+running (1m36.8s), 3000/3000 VUs, 12931 complete and 0 interrupted iterations
+stress   [  48% ] 3000/3000 VUs  1m36.8s/3m20s  2999.99 iters/s
+time="2026-11-14T00:35:45+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:45+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:45+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:45+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:35:45+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:35:45+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:45+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:46+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:35:46+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:46+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:35:46+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:46+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:46+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+
+running (1m37.8s), 3000/3000 VUs, 13167 complete and 0 interrupted iterations
+stress   [  49% ] 3000/3000 VUs  1m37.8s/3m20s  2999.99 iters/s
+time="2026-11-14T00:35:46+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:35:46+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:46+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:46+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:46+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:47+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:47+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:47+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:47+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+
+running (1m38.8s), 3000/3000 VUs, 13408 complete and 0 interrupted iterations
+stress   [  49% ] 3000/3000 VUs  1m38.8s/3m20s  2999.99 iters/s
+time="2026-11-14T00:35:47+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:47+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:47+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:35:47+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:47+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:47+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:47+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:48+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:48+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:35:48+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:48+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:48+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:48+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:48+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:35:48+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:48+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:48+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:48+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:48+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:35:48+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": request timeout"
+
+running (1m39.8s), 3000/3000 VUs, 13679 complete and 0 interrupted iterations
+stress   [  50% ] 3000/3000 VUs  1m39.8s/3m20s  2999.99 iters/s
+time="2026-11-14T00:35:48+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:48+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:48+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:48+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:48+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:48+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:48+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:48+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:48+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:48+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:48+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:48+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:48+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:48+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:48+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:48+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:49+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:49+05:30" level=warning msg="Request Failed" error="request timeout"
+time="2026-11-14T00:35:49+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:49+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:49+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:49+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:49+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:49+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:49+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:49+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:49+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:35:49+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:35:49+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:49+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+
+running (1m40.8s), 3000/3000 VUs, 13969 complete and 0 interrupted iterations
+stress   [  50% ] 3000/3000 VUs  1m40.8s/3m20s  2999.99 iters/s
+time="2026-11-14T00:35:49+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:49+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:49+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:49+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:49+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:49+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:49+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:49+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:50+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:50+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:50+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:50+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:50+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:35:50+05:30" level=warning msg="Request Failed" error="request timeout"
+time="2026-11-14T00:35:50+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:50+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:50+05:30" level=warning msg="Request Failed" error="request timeout"
+time="2026-11-14T00:35:50+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:50+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:50+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+
+running (1m41.8s), 3000/3000 VUs, 14254 complete and 0 interrupted iterations
+stress   [  51% ] 3000/3000 VUs  1m41.8s/3m20s  3000.00 iters/s
+time="2026-11-14T00:35:50+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:50+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:35:50+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:50+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:50+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:50+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:35:50+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:50+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:50+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:51+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:51+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:51+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:51+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:51+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:51+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:51+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:51+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:51+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": read tcp 10.180.55.197:46322->10.180.22.73:8000: read: connection reset by peer"
+time="2026-11-14T00:35:51+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:51+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:51+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:51+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:51+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:51+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:51+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:51+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+
+running (1m42.8s), 2999/3000 VUs, 14559 complete and 0 interrupted iterations
+stress   [  51% ] 2999/3000 VUs  1m42.8s/3m20s  2999.99 iters/s
+time="2026-11-14T00:35:51+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:51+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:51+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:51+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:51+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:51+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:51+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:51+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:52+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:52+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:52+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:52+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:52+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:52+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": read tcp 10.180.55.197:45354->10.180.22.73:8000: read: connection reset by peer"
+time="2026-11-14T00:35:52+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:52+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:52+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:52+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:52+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+
+running (1m43.8s), 3000/3000 VUs, 14841 complete and 0 interrupted iterations
+stress   [  52% ] 3000/3000 VUs  1m43.8s/3m20s  3000.00 iters/s
+time="2026-11-14T00:35:52+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:52+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:52+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:52+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:52+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:52+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:52+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:52+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:52+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": dial: i/o timeout"
+time="2026-11-14T00:35:52+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:52+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:52+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:52+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:52+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:52+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:53+05:30" level=warning msg="Request Failed" error="Post \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:53+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:53+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:53+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:53+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:53+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+time="2026-11-14T00:35:53+05:30" level=warning msg="Request Failed" error="Get \"http://10.180.22.73:8000/api/tasks\": request timeout"
+
+running (1m44.8s), 3000/3000 VUs, 15087 complete and 0 interrupted iterations
+stress   [  52% ] 3000/3000 VUs  1m44.8s/3m20s  2999.99 iters/s
+
+
+  █ THRESHOLDS 
+
+    http_req_duration{seg:0}
+    ✓ 'max>=0' max=1m0s
+
+    http_req_duration{seg:1}
+    ✓ 'max>=0' max=1m0s
+
+    http_req_duration{seg:2}
+    ✓ 'max>=0' max=23.23s
+
+    http_req_duration{seg:3}
+    ✓ 'max>=0' max=0s
+
+    http_req_duration{seg:4}
+    ✓ 'max>=0' max=0s
+
+    http_req_failed{seg:0}
+    ✓ 'rate>=0' rate=8.07%
+
+    http_req_failed{seg:1}
+    ✓ 'rate>=0' rate=4.94%
+
+    http_req_failed{seg:2}
+    ✓ 'rate>=0' rate=0.00%
+
+    http_req_failed{seg:3}
+    ✓ 'rate>=0' rate=0.00%
+
+    http_req_failed{seg:4}
+    ✓ 'rate>=0' rate=0.00%
+
+    http_reqs{seg:0}
+    ✓ 'count>=0' count=8493
+
+    http_reqs{seg:1}
+    ✓ 'count>=0' count=3157
+
+    http_reqs{seg:2}
+    ✓ 'count>=0' count=3463
+
+    http_reqs{seg:3}
+    ✓ 'count>=0' count=0
+
+    http_reqs{seg:4}
+    ✓ 'count>=0' count=0
+
+
+  █ TOTAL RESULTS 
+
+    checks_total.......................: 15113  143.972344/s
+    checks_succeeded...................: 94.42% 14271 out of 15113
+    checks_failed......................: 5.57%  842 out of 15113
+
+    ✗ 2xx or 429
+      ↳  94% — ✓ 14271 / ✗ 842
+
+    CUSTOM
+    status_2xx..............................................................: 14271  135.951123/s
+
+    HTTP
+    http_req_duration.......................................................: avg=15.72s min=0s       med=10.81s p(90)=38.31s p(95)=49.33s p(99)=1m0s   max=1m0s  
+      { expected_response:true }............................................: avg=14.34s min=41.16ms  med=10.43s p(90)=32.96s p(95)=41.29s p(99)=53.95s max=59.95s
+      { seg:0 }.............................................................: avg=16.09s min=0s       med=12.42s p(90)=41.25s p(95)=54.21s p(99)=1m0s   max=1m0s  
+      { seg:1 }.............................................................: avg=24.43s min=0s       med=24.4s  p(90)=43.93s p(95)=52.05s p(99)=1m0s   max=1m0s  
+      { seg:2 }.............................................................: avg=6.86s  min=126.22ms med=7.86s  p(90)=9.71s  p(95)=12.16s p(99)=17.1s  max=23.23s
+      { seg:3 }.............................................................: avg=0s     min=0s       med=0s     p(90)=0s     p(95)=0s     p(99)=0s     max=0s    
+      { seg:4 }.............................................................: avg=0s     min=0s       med=0s     p(90)=0s     p(95)=0s     p(99)=0s     max=0s    
+    http_req_failed.........................................................: 5.57%  842 out of 15113
+      { seg:0 }.............................................................: 8.07%  686 out of 8493
+      { seg:1 }.............................................................: 4.94%  156 out of 3157
+      { seg:2 }.............................................................: 0.00%  0 out of 3463
+      { seg:3 }.............................................................: 0.00%  0 out of 0
+      { seg:4 }.............................................................: 0.00%  0 out of 0
+    http_reqs...............................................................: 15113  143.972344/s
+      { seg:0 }.............................................................: 8493   80.907637/s
+      { seg:1 }.............................................................: 3157   30.074816/s
+      { seg:2 }.............................................................: 3463   32.989891/s
+      { seg:3 }.............................................................: 0      0/s
+      { seg:4 }.............................................................: 0      0/s
+
+    EXECUTION
+    dropped_iterations......................................................: 163959 1561.937509/s
+    iteration_duration......................................................: avg=17.24s min=51.26ms  med=12.26s p(90)=39.36s p(95)=53.13s p(99)=1m0s   max=1m0s  
+    iterations..............................................................: 15113  143.972344/s
+    vus.....................................................................: 3000   min=271          max=3000
+    vus_max.................................................................: 3000   min=500          max=3000
+
+    NETWORK
+    data_received...........................................................: 27 MB  259 kB/s
+    data_sent...............................................................: 6.8 MB 65 kB/s
+
+
+
+
+running (1m45.0s), 0000/3000 VUs, 15113 complete and 3000 interrupted iterations
+stress ✗ [  52% ] 1493/3000 VUs  1m44.9s/3m20s  3000.00 iters/s

@@ -6,6 +6,8 @@ Tests 1 to 3 ran one Node process directly on Windows. **Test 4** (further down)
 
 **Test 5** adds cursor pagination and a Redis cache for the task list, and runs with the cache off and on. Raw output: `k6-paginated-nocache.txt`, `k6-paginated-cache.txt`, `docker-stats-paginated-nocache.txt`, `docker-stats-paginated-cache.txt`, `redis-commandstats-paginated.txt`.
 
+**Test 6** checks the background worker that deletes dead login sessions. **Test 7** repeats the Test 5b stress run while Prometheus + Grafana watch it. Raw output: `k6-observability.txt`, `prometheus-observability.txt`.
+
 ## Architecture / versions tested
 
 | Part | Version / setup |
@@ -328,6 +330,72 @@ The 200 valid test rows were deleted by hand afterwards.
 - Not run under load. A big cleanup during heavy traffic wasn't measured.
 - There's only one worker. If someone runs `--scale worker=2`, both would delete (harmless, since deleting the same row twice doesn't break anything, but it's wasted work). A Redis lock or a job queue (BullMQ) would prevent that.
 - If the worker is down, nothing breaks right away. Rows just pile up until it comes back (`restart: unless-stopped` restarts it after a crash).
+
+## Test 7: the same stress test, watched live with Prometheus + Grafana (2026-11-13)
+
+**Why:** in Tests 1–6, every number came from hand-run commands (`docker stats`, nginx logs, `redis-cli INFO`). Now each backend serves `/metrics` (`prom-client`): a histogram of request time by method/route/status, a cache hit/miss counter, and Node's default CPU/memory/event-loop metrics. **Prometheus** scrapes all 4 backends **directly** every 5 s (Docker DNS service discovery on the name `backend`, not through nginx, because nginx would give a random backend's numbers each time). **Grafana** (localhost:3001) draws the `TaskManager` dashboard. `/metrics` is blocked from outside in nginx (`location = /metrics { return 404; }`).
+
+**Setup:** same as Test 5b: 4 backends + cache on, 20,000 seeded users, Redis rate-limit and cache keys cleared, `k6 run -e SCENARIO=stress -e RATES=1000,2000,3000,4000,5000 test/load.js`. Raw: `k6-observability.txt`, `prometheus-observability.txt`.
+
+### Results (k6, from the client side)
+
+| Asked | Done (req/s) | p95 | p99 | Failed |
+|---|---|---|---|---|
+| ~940 | 937 | 25 ms | 107 ms | 0 |
+| ~1875 | 1874 | 31 ms | 66 ms | 0 |
+| ~2875 | 2860 | 158 ms | 295 ms | 0 |
+| ~3750 | 3700 | 343 ms | 8.1 s | 0 |
+| ~4625 | 3632 | 503 ms | 17.7 s | 63 of 145,300 |
+
+Total: 520,203 requests, 63 failed (0.01%, all timeouts in the last step). Compared to Test 5b, the ceiling is the same (~3,600–3,700 req/s), so **timing every request costs no visible capacity**. The last step did better than 5b (p95 503 ms vs 6.1 s), probably thanks to the keepalive fix that came after 5b.
+
+### Results (Prometheus, from inside the backends)
+
+| What | Value | What it shows |
+|---|---|---|
+| Peak requests/s (all backends) | **3,776** | Matches k6, so the metrics are correct |
+| Requests per backend | 130,378 / 131,025 / 131,175 / 131,194 | nginx split the work **within 0.6%** of even |
+| Cache hit rate | **78.2%** | The same 78% that Test 5 needed `INFO commandstats` and maths for |
+| Status codes | 200: 446,170 · 201: 78,329 · **no 5xx** | The backends never errored |
+| CPU per backend (max) | 0.87–0.88 cores each | Each Node process is single-threaded, so ~1 core is its limit. **The backends are the bottleneck** |
+| Event loop lag p99 (max) | 87–113 ms | The loop was busy, but not blocked |
+| Server-side p95 (max) | **397 ms** (`/api/tasks/`) | See below |
+
+### The most interesting finding: where the slow requests waited
+
+k6 saw a **p99 of 17.7 s** in the last step, but the backends themselves never took longer than **~0.4 s** for 95% of requests. The backend's timer starts when Express gets the request, so **the extra seconds were spent waiting before reaching Express**: in nginx's queue, in the TCP connection backlog, and in k6 on the same overloaded laptop. Without both views (client from k6 + server from Prometheus), this would look like "the backend is slow". In fact, the backend is **full** (CPU ~1 core each) and requests are **queueing in front of it**.
+
+### What Test 7 tells us
+
+- **The dashboard shows the same things the manual tests found**, live, in one place: cliff at ~3,700 req/s, even load balancing, 78% cache hits, CPU-bound backends.
+- **Measuring in two places** (client and server) tells you *where* the time goes.
+- **The next capacity lever is more CPU for the backends** (more replicas on a bigger machine, or Kubernetes across several machines), not the database or the cache.
+
+### Limits of Test 7
+
+- Still one laptop: k6, nginx, Postgres, Prometheus and Grafana all compete for the same CPU.
+- `rate()` over 30 s / 1 min smooths short spikes, so the graphs lag reality by about 5–15 s.
+- The route label for both `GET` and `POST /api/tasks` is `/api/tasks/` (Express adds the trailing `/`), split only by `method`.
+
+## Test 8 (stopped early): k6 on a second machine over campus Wi-Fi (2026-11-14)
+
+**Why:** to stop k6 competing with the app for the laptop's CPU (a limit of every earlier test), k6 ran on a second machine (Kali, 4 cores, 3.7 GB RAM, k6 v1.0.0) and sent traffic to the laptop's nginx at `10.180.22.73:8000`. Both machines were on the campus Wi-Fi `SU_Student` (machine 2's link rate: 28.9 Mb/s).
+
+**What happened:** even the first, easiest step (1,000 req/s, which the laptop handled with p95 25 ms in Test 7) failed:
+
+| | Value |
+|---|---|
+| Asked | 1,000 req/s |
+| Reached the backends | **~80–110 req/s** (Prometheus) |
+| k6 virtual users | all 3,000 used up, stuck waiting |
+| Failed in step 1 | 8% (686 of 8,493) |
+| A single `curl /health` during the test | TCP connect **1–8.6 s**, most hit the 10 s timeout |
+
+I stopped it after 1 m 45 s (raw: `k6-remote-machine2.txt`).
+
+**Why:** the backends were almost idle, so the limit was the **network**: shared Wi-Fi, where each request crosses the air twice (machine 2 → access point → laptop) and competes with every other student on the network. Load testing on a shared campus network also disturbs other people and can look like an attack to the network admins, so it should not be repeated there.
+
+**What it tells us:** the network is a real part of the system and can be the bottleneck before the code is. For a meaningful two-machine test, connect the machines with a cable (or a private router) instead.
 
 ## Limits of this test (read before trusting the numbers)
 

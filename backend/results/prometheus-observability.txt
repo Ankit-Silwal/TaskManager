@@ -1,0 +1,29 @@
+Prometheus queries after the Test 7 k6 run (window: last 6-8 min)
+== max_over_time(sum(rate(http_request_duration_seconds_count[30s]))[10m:5s])
+{} 3776.3713
+== sum by (instance)(increase(http_request_duration_seconds_count[8m]))
+{"instance":"172.18.0.8:8000"} 130393.1923
+{"instance":"172.18.0.7:8000"} 132418.8460
+{"instance":"172.18.0.6:8000"} 130527.9954
+{"instance":"172.18.0.5:8000"} 130551.7082
+== max_over_time(histogram_quantile(0.95, sum by (le, route)(rate(http_request_duration_seconds_bucket[30s])))[10m:5s])
+{"route":"/health"} 0.2425
+{"route":"unmatched"} NaN
+{"route":"/api/tasks/"} 0.3969
+{"route":"/metrics"} 0.0175
+== sum(increase(task_cache_lookups_total{result="hit"}[8m])) / sum(increase(task_cache_lookups_total[8m]))
+{} 0.7817
+== sum by (status)(increase(http_request_duration_seconds_count[8m]))
+{"status":"200"} 446086.7931
+{"status":"404"} 0.0000
+{"status":"201"} 78289.5793
+== max by (instance)(max_over_time(rate(process_cpu_seconds_total[30s])[10m:5s]))
+{"instance":"172.18.0.8:8000"} 0.8796
+{"instance":"172.18.0.7:8000"} 0.8698
+{"instance":"172.18.0.6:8000"} 0.8739
+{"instance":"172.18.0.5:8000"} 0.8774
+== max by (instance)(max_over_time(nodejs_eventloop_lag_p99_seconds[10m]))
+{"instance":"172.18.0.8:8000"} 0.0874
+{"instance":"172.18.0.7:8000"} 0.1108
+{"instance":"172.18.0.6:8000"} 0.1125
+{"instance":"172.18.0.5:8000"} 0.0935
